@@ -74,7 +74,7 @@ public class DatabaseClientScript : MonoBehaviour {
         idText.text = "Client ID: " + ID;
         firstnameText.text = "Firstname: " + firstname;
         surnameText.text = "Surname: " + surname;
-        subjectText.text = "Subject :" + subject;
+        subjectText.text = "Subject: " + subject;
     }
 
     public void nextDetails()
@@ -100,41 +100,33 @@ public class DatabaseClientScript : MonoBehaviour {
 
         if(cardnameText.text != cardname)
         {
-            Debug.Log("WRONG NAME");
         }
         else
         {
-            Debug.Log("RIGHT NAME");
             correctNum++;
         }
 
         if (cardnumText.text != cardnum)
         {
-            Debug.Log("WRONG NUM");
         }
         else
         {
-            Debug.Log("RIGHT NUM");
             correctNum++;
         }
 
         if (expirationdateText.text != expirationdate)
         {
-            Debug.Log("WRONG DATE");
         }
         else
         {
-            Debug.Log("RIGHT DATE");
             correctNum++;
         }
 
         if (codeText.text != code)
         {
-            Debug.Log("WRONG CODE");
         }
         else
         {
-            Debug.Log("RIGHT CODE");
             correctNum++;
         }
 

@@ -26,6 +26,7 @@ TagManager:
   - CardNumberInput
   - ExpirationDateInput
   - SecurityCodeInput
+  - UserChatText
   layers:
   - Default
   - TransparentFX

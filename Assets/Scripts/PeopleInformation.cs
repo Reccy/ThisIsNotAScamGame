@@ -1,17 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PeopleInformation : MonoBehaviour {
 
     private DatabaseClientScript databaseClient;
+    private GameInformation gameInfo;
     private int personCurrent;
 
 	void Start () 
     {
         databaseClient = GameObject.FindGameObjectWithTag("DatabaseClient").GetComponent<DatabaseClientScript>();
+        gameInfo = GameObject.FindGameObjectWithTag("GameInformation").GetComponent<GameInformation>();
         personCurrent = 0;
         nextPerson();
 	}
+
+    public int getPersonCurrent()
+    {
+        return personCurrent;
+    }
 
     public void nextPerson()
     {
@@ -19,7 +27,7 @@ public class PeopleInformation : MonoBehaviour {
 
         if(personCurrent == 1)
         {
-            databaseClient.setDetails(Random.Range(1000, 5000).ToString(), "James", "Johnson", "Ransomware", "James Johnson", Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString(), Random.Range(1, 12).ToString() + "/" + Random.Range(97, 99).ToString(), Random.Range(100, 900).ToString());  
+            databaseClient.setDetails(Random.Range(1000, 5000).ToString(), "James", "Johnson", "Ransomware", "James Johnson", Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString(), Random.Range(1, 12).ToString() + "/" + Random.Range(97, 99).ToString(), Random.Range(100, 900).ToString());
         }
         else if(personCurrent == 2)
         {
