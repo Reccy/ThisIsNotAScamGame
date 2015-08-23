@@ -27,6 +27,9 @@ TagManager:
   - ExpirationDateInput
   - SecurityCodeInput
   - UserChatText
+  - LeftButton
+  - RightButton
+  - SendButton
   layers:
   - Default
   - TransparentFX

@@ -737,7 +737,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 409514749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1367256648, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0509af57a8619c04aab85c6eae534802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 785062431}
@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 73619038}
   m_HandleRect: {fileID: 73619037}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1642,7 +1642,7 @@ GameObject:
   - 114: {fileID: 885308919}
   m_Layer: 5
   m_Name: LeftButton
-  m_TagString: Untagged
+  m_TagString: LeftButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2422,7 +2422,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 829.000732, y: 502.000488}
+  m_AnchoredPosition: {x: 829.000732, y: 494}
   m_SizeDelta: {x: 329, y: 495}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1167738562
@@ -2741,7 +2741,7 @@ GameObject:
   - 114: {fileID: 1432800241}
   m_Layer: 5
   m_Name: RightButton
-  m_TagString: Untagged
+  m_TagString: RightButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3060,7 +3060,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SUBMIT
+  m_Text: SEND
 --- !u!222 &1567694176
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3924,8 +3924,8 @@ GameObject:
   - 114: {fileID: 1964766169}
   - 114: {fileID: 1964766168}
   m_Layer: 5
-  m_Name: SubmitButton
-  m_TagString: Untagged
+  m_Name: SendButton
+  m_TagString: SendButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3988,7 +3988,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1167738564}
-        m_MethodName: SubmitButtonClicked
+        m_MethodName: SendButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

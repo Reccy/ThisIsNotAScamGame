@@ -77,6 +77,26 @@ public class DatabaseClientScript : MonoBehaviour {
         subjectText.text = "Subject: " + subject;
     }
 
+    public string getCardname()
+    {
+        return cardname;
+    }
+
+    public string getCardnum()
+    {
+        return cardnum;
+    }
+
+    public string getExpirationdate()
+    {
+        return expirationdate;
+    }
+
+    public string getCode()
+    {
+        return code;
+    }
+
     public void nextDetails()
     {
         peopleInformation.nextPerson();

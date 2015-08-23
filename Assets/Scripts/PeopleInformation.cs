@@ -6,12 +6,14 @@ public class PeopleInformation : MonoBehaviour {
 
     private DatabaseClientScript databaseClient;
     private GameInformation gameInfo;
+    private ChatClientScript chatClient;
     private int personCurrent;
 
 	void Start () 
     {
         databaseClient = GameObject.FindGameObjectWithTag("DatabaseClient").GetComponent<DatabaseClientScript>();
         gameInfo = GameObject.FindGameObjectWithTag("GameInformation").GetComponent<GameInformation>();
+        chatClient = GameObject.FindGameObjectWithTag("ChatClient").GetComponent<ChatClientScript>();
         personCurrent = 0;
         nextPerson();
 	}
@@ -31,11 +33,13 @@ public class PeopleInformation : MonoBehaviour {
         }
         else if(personCurrent == 2)
         {
-            databaseClient.setDetails(Random.Range(1000, 5000).ToString(), "Fuck", "You", "I'm not a pedo", "Richard Jenkins", Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString(), Random.Range(1, 12).ToString() + "/" + Random.Range(97, 99).ToString(), Random.Range(100, 900).ToString());
+            databaseClient.setDetails(Random.Range(1000, 5000).ToString(), "F***", "You", "Ransomware", "Richard Jenkins", Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString(), Random.Range(1, 12).ToString() + "/" + Random.Range(97, 99).ToString(), Random.Range(100, 900).ToString());
+            chatClient.NewConversation();
         }
         else if(personCurrent == 3)
         {
             databaseClient.setDetails(Random.Range(1000, 5000).ToString(), "Moira", "O'Flannigan", "USafe AntiVirus Subscription", "Brad O'Flannigan", Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString(), Random.Range(1, 12).ToString() + "/" + Random.Range(97, 99).ToString(), Random.Range(100, 900).ToString());
+            chatClient.NewConversation();
         }
         else
         {
