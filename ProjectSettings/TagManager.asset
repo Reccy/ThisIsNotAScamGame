@@ -9,6 +9,12 @@ TagManager:
   - OptionOne
   - OptionTwo
   - OptionThree
+  - PeopleInformation
+  - GameInformation
+  - ID
+  - Firstname
+  - Surname
+  - Subject
   layers:
   - Default
   - TransparentFX

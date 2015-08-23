@@ -3,15 +3,19 @@ using System.Collections;
 
 public class ChatClientScript : MonoBehaviour {
 
-    GameObject chatClient;
-    GameObject optionOne;
-    GameObject optionTwo;
-    GameObject optionThree;
+    private GameObject chatClient;
+    private GameInformation gameInformation;
+    private PeopleInformation peopleInformation;
+    private GameObject optionOne;
+    private GameObject optionTwo;
+    private GameObject optionThree;
     private int selectedOption;
 
 	void Start () 
     {
         chatClient = GameObject.FindGameObjectWithTag("ChatClient");
+        gameInformation = GameObject.FindGameObjectWithTag("GameInformation").GetComponent<GameInformation>();
+        peopleInformation = GameObject.FindGameObjectWithTag("PeopleInformation").GetComponent<PeopleInformation>();
         optionOne = GameObject.FindGameObjectWithTag("OptionOne");
         optionTwo = GameObject.FindGameObjectWithTag("OptionTwo");
         optionThree = GameObject.FindGameObjectWithTag("OptionThree");
