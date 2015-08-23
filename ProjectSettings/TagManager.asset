@@ -15,6 +15,17 @@ TagManager:
   - Firstname
   - Surname
   - Subject
+  - Cardname
+  - Cardnum
+  - ExpirationDate
+  - Code
+  - Status
+  - SubmitBtn
+  - ClientBtn
+  - CardNameInput
+  - CardNumberInput
+  - ExpirationDateInput
+  - SecurityCodeInput
   layers:
   - Default
   - TransparentFX
