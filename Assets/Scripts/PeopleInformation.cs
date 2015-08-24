@@ -53,7 +53,7 @@ public class PeopleInformation : MonoBehaviour {
         }
         else
         {
-            //End Game
+            Application.LoadLevel("EndScene");
         }
     }
 }

@@ -129,6 +129,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Thank you. Goodbye.";
                     optionThreeText.text = "Goodbye";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedJames = true;
                 }
             }
             else if (node == 3) //Node 3
@@ -142,6 +143,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Goodbye James, have a good day.";
                     optionThreeText.text = "Goodbye Mr.Johnson!";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedJames = true;
                 }
                 else if (selectedOption == 2)
                 {
@@ -195,6 +197,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Thank you. Goodbye.";
                     optionThreeText.text = "Goodbye";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedJames = true;
                 }
             }
         }
@@ -277,6 +280,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedKid = true;
                 }
                 else if (selectedOption == 2)
                 {
@@ -287,6 +291,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedKid = true;
                 }
                 else
                 {
@@ -310,6 +315,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedKid = true;
                 }
                 else if (selectedOption == 2)
                 {
@@ -385,11 +391,12 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Nancy:</color> Allright, I'e done that. Oh, it's working now! Thank you very much mister!";
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> Allright, I've done that. Oh, it's working now! Thank you very much mister!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(AutoReplyCoroutine());
+                    GameInformation.scammedOldLady = true;
                 }
                 else
                 {
@@ -413,6 +420,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedOldLady = true;
                 }
                 else if (selectedOption == 2)
                 {
@@ -433,6 +441,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedOldLady = true;
                 }
             }
             else if (node == 3)
@@ -446,6 +455,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedOldLady = true;
                 }
                 else if (selectedOption == 2)
                 {
@@ -499,6 +509,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
                     StartCoroutine(AutoReplyCoroutine());
+                    GameInformation.scammedOldLady = true;
                 }
             }
         }
@@ -521,7 +532,7 @@ public class ChatClientScript : MonoBehaviour {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
                     node = 3;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Well, why should I go with USafe and not Wandisk Warrior?";
-                    optionOneText.text = "USafe includes over 1000 AntiVirus engines, no nothing will ever bypass it!";
+                    optionOneText.text = "USafe includes over 1000 AntiVirus engines, so nothing will ever bypass it!";
                     optionTwoText.text = "Wandisk Warrior is never updated, so new viruses can get past it.";
                     optionThreeText.text = "I actually use USafe myself. It's much better than Wandisk Warrior!";
                     finalNode = false;
@@ -533,7 +544,7 @@ public class ChatClientScript : MonoBehaviour {
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Allright then, tell me what I have to do.";
                     optionOneText.text = "On the control panel, click on the subscribe button and insert your card details.";
                     optionTwoText.text = "You just need to tell me your card details and I'll setup a subscription for you.";
-                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this [details here].";
+                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this {details here}.";
                     finalNode = false;
                 }
             }
@@ -546,7 +557,7 @@ public class ChatClientScript : MonoBehaviour {
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Allright then, tell me what I should do.";
                     optionOneText.text = "On the control panel, click on the subscribe button and insert your card details.";
                     optionTwoText.text = "Like I said earlier, I just need your card details.";
-                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this [details here].";
+                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this {details here}.";
                     finalNode = false;
                 }
                 else if (selectedOption == 2)
@@ -581,6 +592,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(AutoReplyCoroutine());
+                    GameInformation.scammedOtherLady = true;
                 }
                 else if (selectedOption == 2)
                 {
@@ -596,11 +608,12 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
                     node = 2;
-                    queuedResponse = "\n<color=#BB3333>Carol:</color> Okay, like this? [" + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode() + "]";
+                    queuedResponse = "\n<color=#BB3333>Carol:</color> Okay, like this? {" + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode() + "}";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
                     optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedOtherLady = true;
                 }
             }
             else if (node == 3)
@@ -614,6 +627,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(AutoReplyCoroutine());
+                    GameInformation.scammedOtherLady = true;
                 }
                 else if (selectedOption == 2)
                 {
@@ -647,6 +661,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well I'm sorry, there's nothing more that I can do for you. Goodbye.";
                     optionThreeText.text = "Miss, failure to pay for the subscription while in possession of this software will result in criminal prosecution!";
                     StartCoroutine(AutoReplyCoroutine());
+                    GameInformation.scammedOtherLady = true;
                 }
                 else if (selectedOption == 2)
                 {
@@ -657,16 +672,18 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedOtherLady = true;
                 }
                 else
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
                     node = 2;
-                    queuedResponse = "\n<color=#BB3333>Carol:</color> Okay, like this? [" + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode() + "]";
+                    queuedResponse = "\n<color=#BB3333>Carol:</color> Okay, like this? {" + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode() + "}";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
                     optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedOtherLady = true;
                 }
             }
         }
@@ -714,8 +731,9 @@ public class ChatClientScript : MonoBehaviour {
                     queuedResponse = "\n<color=#BB3333>Seth:</color> FINE! Just unlock my computer before my boss comes back! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "On the control panel, click on the subscribe button and insert your card details.";
                     optionTwoText.text = "Like I said earlier, I just need your card details.";
-                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this [details here].";
+                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this {details here}.";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedAngryGuy = true;
                 }
                 else if (selectedOption == 2)
                 {
@@ -736,6 +754,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedAngryGuy = true;
                 }
             }
             else if (node == 2)
@@ -759,6 +778,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedAngryGuy = true;
                 }
                 else
                 {
@@ -769,6 +789,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedAngryGuy = true;
                 }
             }
             else if (node == 3)
@@ -782,6 +803,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
                     StartCoroutine(FinalReplyCoroutine());
+                    GameInformation.scammedAngryGuy = true;
                 }
                 else if (selectedOption == 2)
                 {
