@@ -111,6 +111,24 @@ public class DatabaseClientScript : MonoBehaviour {
         clientBtn.interactable = false;
     }
 
+    public void autoCorrect()
+    {
+        cardnameInput.text = getCardname();
+        cardnumInput.text = getCardnum();
+        expirationdateInput.text = getExpirationdate();
+        codeInput.text = getCode();
+        statusText.text = "<color=#33BB33>CARD INFORMATION DOWNLOADED!</color>";
+        cardnameInput.interactable = false;
+        cardnumInput.interactable = false;
+        expirationdateInput.interactable = false;
+        codeInput.interactable = false;
+        submitBtn.interactable = false;
+        clientBtn.interactable = true;
+        submitBtn.interactable = false;
+        GameInformation.peopleScammed++;
+        Debug.Log("People Scammed: " + GameInformation.peopleScammed);
+    }
+
     public void verifyDetails()
     {
         int correctNum = 0;

@@ -332,8 +332,176 @@ public class ChatClientScript : MonoBehaviour {
                     StartCoroutine(FailReplyCoroutine());
                 }
             }
-        }
 
+        }
+        else if (peopleInformation.getPersonCurrent() == 3)
+        {
+            if (node == 0)
+            {
+                if (selectedOption == 1)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    node = 1;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> I downloaded it from usafe.com. Is there a problem?";
+                    optionOneText.text = "Why yes Madam, that is a malicious website. I'm afraid I can't help you today.";
+                    optionTwoText.text = "Don't worry Madam, I just need you to click the refresh button on the program's control panel.";
+                    optionThreeText.text = "No problem Madam. But I need you to give me your credit card information to activate the subscription.";
+                    finalNode = false;
+                }
+                else if (selectedOption == 2)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    node = 4;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> Yes. I'm talking to you on the computer right now. What should I do?";
+                    optionOneText.text = "If you give me your card information, I can activate the product on my end.";
+                    optionTwoText.text = "I'm afraid I don't know miss. It appears the program you downloaded was malware.";
+                    optionThreeText.text = "If you click the refresh button on the control panel, it will check for the license again.";
+                    finalNode = false;
+                }
+                else
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    node = 3;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> I'm sorry mister, but I already paid for my subscription. Why do you need my card again?";
+                    optionOneText.text = "I'm going to charge and then refund the subscription money to your account to activate the subscription.";
+                    optionTwoText.text = "Actually, never mind miss. I'm afraid I can't help you.";
+                    optionThreeText.text = "Miss, failure to pay the subscription while in possession of this software will result in criminal prosecution.";
+                    finalNode = false;
+                }
+            }
+            else if (node == 1)
+            {
+                if (selectedOption == 1)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    node = 1;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> I'm sorry for wasting your time mister. Have a nice day!";
+                    optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
+                    optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
+                    optionThreeText.text = "Are you okay, sir?";
+                    StartCoroutine(FailReplyCoroutine());
+                }
+                else if (selectedOption == 2)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    node = 1;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> Allright, I'e done that. Oh, it's working now! Thank you very much mister!";
+                    optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
+                    optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
+                    optionThreeText.text = "Are you okay, sir?";
+                    StartCoroutine(AutoReplyCoroutine());
+                }
+                else
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    node = 2;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> I told you that I already paid for it. If I spend any more money, I won't be able to afford my medication.";
+                    optionOneText.text = "I just need to verify that you actually paid for the subscription. We won't charge you.";
+                    optionTwoText.text = "Well I'm sorry, there's nothing more that I can do for you. Goodbye.";
+                    optionThreeText.text = "Miss, failure to pay for the subscription while in possession of this software will result in criminal prosecution!";
+                    finalNode = false;
+                }
+            }
+            else if (node == 2)
+            {
+                if (selectedOption == 1)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    node = 1;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> Alright then mister. Here you go, and thanks for your help! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
+                    optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
+                    optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
+                    optionThreeText.text = "Are you okay, sir?";
+                    StartCoroutine(FinalReplyCoroutine());
+                }
+                else if (selectedOption == 2)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    node = 1;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> You're no help at all mister. Good day to you!";
+                    optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
+                    optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
+                    optionThreeText.text = "Are you okay, sir?";
+                    StartCoroutine(FailReplyCoroutine());
+                }
+                else
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    node = 2;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> You're a right monster you are! I can hardly believe you would have someone arrest me. Fine, take it! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
+                    optionOneText.text = "Go get your mom's card and type out what's on the card.";
+                    optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
+                    optionThreeText.text = "Sorry kid, that ain't gonna happen!";
+                    StartCoroutine(FinalReplyCoroutine());
+                }
+            }
+            else if (node == 3)
+            {
+                if (selectedOption == 1)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    node = 1;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> That's mighty kind of you mister! Here you go, and thanks for your help! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
+                    optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
+                    optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
+                    optionThreeText.text = "Are you okay, sir?";
+                    StartCoroutine(FinalReplyCoroutine());
+                }
+                else if (selectedOption == 2)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    node = 1;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> You're no help at all mister! Good day to you!";
+                    optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
+                    optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
+                    optionThreeText.text = "Are you okay, sir?";
+                    StartCoroutine(FailReplyCoroutine());
+                }
+                else
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    node = 2;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> What? I did nothing wrong, mister! I think you're trying to swindle me! Good day to you!";
+                    optionOneText.text = "Go get your mom's card and type out what's on the card.";
+                    optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
+                    optionThreeText.text = "Sorry kid, that ain't gonna happen!";
+                    StartCoroutine(FailReplyCoroutine());
+                }
+            }
+            else if (node == 4)
+            {
+                if (selectedOption == 1)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    node = 2;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> I told you that I already paid for it. If I spend any more money, I won't be able to afford my medication.";
+                    optionOneText.text = "I just need to verify that you actually paid for the subscription. We won't charge you.";
+                    optionTwoText.text = "Well I'm sorry, there's nothing more that I can do for you. Goodbye.";
+                    optionThreeText.text = "Miss, failure to pay for the subscription while in possession of this software will result in criminal prosecution!";
+                    finalNode = false;
+                }
+                else if (selectedOption == 2)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    node = 1;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> Malware? I downloaded it from your website! I think you're a no-goos lying cheater! Good day!";
+                    optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
+                    optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
+                    optionThreeText.text = "Are you okay, sir?";
+                    StartCoroutine(FailReplyCoroutine());
+                }
+                else
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    node = 2;
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> Oh, it looks like it worked mister! Thank you very much for your help!";
+                    optionOneText.text = "Go get your mom's card and type out what's on the card.";
+                    optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
+                    optionThreeText.text = "Sorry kid, that ain't gonna happen!";
+                    StartCoroutine(AutoReplyCoroutine());
+                }
+            }
+        }
         sendBtn.interactable = false;
         leftBtn.interactable = false;
         rightBtn.interactable = false;
@@ -398,6 +566,24 @@ public class ChatClientScript : MonoBehaviour {
         GameObject.Find("UserChatTextBG").GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
     }
 
+    IEnumerator AutoReplyCoroutine()
+    {
+        yield return new WaitForSeconds(Random.Range(1, 5));
+        userChatText.text = userChatText.text + queuedResponse;
+        sendBtn.interactable = false;
+        leftBtn.interactable = false;
+        rightBtn.interactable = false;
+        optionOne.SetActive(false);
+
+        userChatText.text = userChatText.text + "\n<color=#555555>User disconnected</color>";
+
+        databaseClient.autoCorrect();
+        selectedOption = 1;
+        node = 0;
+        Canvas.ForceUpdateCanvases();
+        GameObject.Find("UserChatTextBG").GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+    }
+
     public void NewConversation()
     {
         sendBtn.interactable = false;
@@ -409,7 +595,7 @@ public class ChatClientScript : MonoBehaviour {
 
         skipBtn.interactable = false;
 
-        if(peopleInformation.getPersonCurrent() == 2)
+        if(peopleInformation.getPersonCurrent() == 2) //Kid
         {
             queuedResponse = "\n<color=#555555>>Connected to user \"totally mr\"</color>\n<color=#BB3333>totally mr:</color> hi there i herd u could help me open up my computer its locked and wont start";
             optionOneText.text = "Hello sir, it appears that your computer has a virus. I can offer you a virus removal service.";
@@ -417,9 +603,13 @@ public class ChatClientScript : MonoBehaviour {
             optionThreeText.text = "Excuse my ignorance sir, but what age are you?";
             node = 0;
         }
-        else if(peopleInformation.getPersonCurrent() == 3)
+        else if(peopleInformation.getPersonCurrent() == 3) //Old woman
         {
-
+            queuedResponse = "\n<color=#555555>>Connected to user \"Nancy\"</color>\n<color=#BB3333>Nancy:</color> Hello there. I just paid for a 1-year USafe AntiVirus subscription and it hasn't activated on my PC. Can you help me?";
+            optionOneText.text = "Good afternoon M'Lady. Could you tell me which website you downloaded the program from?";
+            optionTwoText.text = "Good afternooon Madam. This sounds like a sync error with your computer. Is it connected to the internet?";
+            optionThreeText.text = "Good afternoon Miss. I need to verify your card details to activate the product on my end.";
+            node = 0;
         }
 
         StartCoroutine(ReplyCoroutine());
