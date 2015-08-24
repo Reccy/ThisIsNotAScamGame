@@ -47,10 +47,10 @@ public class ChatClientScript : MonoBehaviour {
         optionTwo.SetActive(false);
         optionThree.SetActive(false);
 
-        queuedResponse = "<color=#555555>>Connected to user \"James\"</color>\n<color=#BB3333>James:</color> Hi, my computer won't start up and I was told to contact you to unlock it?";
-        optionOneText.text = "Hi James, my name is Riley and I'm here to help you unlock your computer. In order to do this, I need you to provide me with your credit card information.";
-        optionTwoText.text = "Alright James, in order to do that I need your credit card information.";
-        optionThreeText.text = "Your computer has been locked because you accessed illegal pornography websites. You will need to pay a fine or face prison. I require your credit card information to make this transaction.";
+        queuedResponse = "<color=#555555>>Connected to user \"James\"</color>\n<color=#BB3333>James:</color> Okay, you deadbeats! I caught your goddamned virus. I want if off my computer now!";
+        optionOneText.text = "Hi James, my name is Riley and I'll be your support technician today. Could you explain the virus to me?";
+        optionTwoText.text = "Hi James, I'm not aware of any virus that you have caught from us. We do offer a paid virus removal service.";
+        optionThreeText.text = "Hi there James, I'm afraid that whatever virus you caught was not from us. If you want I can remove the virus for a fee?";
         node = 0;
 
         StartCoroutine(ReplyCoroutine());
@@ -63,70 +63,136 @@ public class ChatClientScript : MonoBehaviour {
         gotInfo = true;
         if (peopleInformation.getPersonCurrent() == 1)
         {
-            if (node == 0)
+            if (node == 0) //Node 0
             {
                 if (selectedOption == 1)
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>James:</color> Wait, why do you need my credit card? Why should I pay you?";
-                    optionOneText.text = "Well, James. Under the Data Protection Act Section 7-A1 you have to pay a fine for accessing illegal materials. In this case, porn.";
-                    optionTwoText.text = "Well, neither of us want to be in this situation. Give me your credit card information or I'll leak this all over the internet!";
-                    optionThreeText.text = "I just need your credit card information for verifaction purposes. Your card won't be charged.";
+                    queuedResponse = "\n<color=#BB3333>James:</color> As if you don't already know. My computer won't turn on, it says that I need to pay a fine for watching child pornography by giving you my card information!?";
+                    optionOneText.text = "That's weird, you must have confused us with someone else. I'm afraid I can't help you.";
+                    optionTwoText.text = "Well, we can remove the virus for you. We just need to verify your card details.";
+                    optionThreeText.text = "That's not a virus. It's a security feature to catch paedophiles. I think you should pay the fine.";
                     gotInfo = false;
                 }
                 else if (selectedOption == 2)
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
-                    node = 1;
-                    queuedResponse = "\n<color=#BB3333>James:</color> Wait, why do you need my credit card? Why should I pay you?";
-                    optionOneText.text = "Well, James. Under the Data Protection Act Section 7-A1 you have to pay a fine for accessing illegal materials. In this case, porn.";
-                    optionTwoText.text = "Well, neither of us want to be in this situation. Give me your credit card information or I'll leak this all over the internet!";
-                    optionThreeText.text = "I just need your credit card information for verifaction purposes. Your card won't be charged.";
+                    node = 5;
+                    queuedResponse = "\n<color=#BB3333>James:</color> Do you actually expect me to f***ing pay YOU to remove the virus!? Remove it NOW before I take legal action!";
+                    optionOneText.text = "I'm sorry Mr.Johnson, like I said we don't distribute viruses and I can remove the virus for a fee.";
+                    optionTwoText.text = "James, I don't appreciate your tone. If you want the virus removed, just send me your details.";
+                    optionThreeText.text = "If you call the cops, they'll arrest you on charges of child pornography. Be smart about this.";
                     gotInfo = false;
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
-                    node = 1;
-                    queuedResponse = "\n<color=#BB3333>James:</color> What the f*** are you talking about? I wasn't on any illegal porn websites!";
-                    optionOneText.text = "Our monitoring systems seem to suggest otherwise. We wouldn't want that information to leak onto the internet, would we?";
-                    optionTwoText.text = "That is irrelevant. You will go to prison unless you pay the fine. We can do this the easy way or the hard way.";
-                    optionThreeText.text = "We have records, Mr. Johnson. I think the Federal Bureau of Investigation would be interested in these. Now, the card info?";
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    node = 5;
+                    queuedResponse = "\n<color=#BB3333>James:</color> Do you actually expect me to f***ing pay YOU to remove the virus!? Remove it NOW before I take legal action!";
+                    optionOneText.text = "I'm sorry Mr.Johnson, like I said we don't distribute viruses and I can remove the virus for a fee.";
+                    optionTwoText.text = "James, I don't appreciate your tone. If you want the virus removed, just send me your details.";
+                    optionThreeText.text = "If you call the cops, they'll arrest you on charges of child pornography. Be smart about this.";
                     gotInfo = false;
                 }
             }
-            else if (node == 1)
+            else if (node == 1) //Node 1
             {
                 if (selectedOption == 1)
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
                     node = 2;
-                    queuedResponse = "\n<color=#BB3333>James:</color> Okay, Fine! Here's my details: " + databaseClient.getCardname() + " Number:" + databaseClient.getCardnum() + " Expiry:" + databaseClient.getExpirationdate() + " Code:" + databaseClient.getCode();
-                    optionOneText.text = "Thank you James. Your computer will be unlocked shortly. Goodbye.";
+                    queuedResponse = "\n<color=#BB3333>James:</color> Oh I'm sorry about that! I must have contacted the wrong people. I'm going now.";
+                    optionOneText.text = "Sorry we couldn't help you! Goodbye.";
                     optionTwoText.text = "Thank you. Goodbye.";
                     optionThreeText.text = "Goodbye";
-                    gotInfo = false;
+                    StartCoroutine(FinalReplyCoroutine());
                 }
                 else if (selectedOption == 2)
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
-                    node = 2;
-                    queuedResponse = "\n<color=#BB3333>James:</color> Okay, Fine! Here's my details: " + databaseClient.getCardname() + " Number:" + databaseClient.getCardnum() + " Expiry:" + databaseClient.getExpirationdate() + " Code:" + databaseClient.getCode();
-                    optionOneText.text = "Thank you James. Your computer will be unlocked shortly. Goodbye.";
-                    optionTwoText.text = "Thank you. Goodbye.";
-                    optionThreeText.text = "Goodbye";
+                    node = 3;
+                    queuedResponse = "\n<color=#BB3333>James:</color> Why the hell do you need my details!? This is obviously a scam!";
+                    optionOneText.text = "We just need the details to verify that you are the owner of the computer so that we can disable the virus.";
+                    optionTwoText.text = "It's just a formality, we won't charge your card.";
+                    optionThreeText.text = "Just trust me, this isn't a scam!";
                     gotInfo = false;
                 }
                 else
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
-                    node = 2;
-                    queuedResponse = "\n<color=#BB3333>James:</color> Okay, Fine! Here's my details: " + databaseClient.getCardname() + " Number:" + databaseClient.getCardnum() + " Expiry:" + databaseClient.getExpirationdate() + " Code:" + databaseClient.getCode();
+                    node = 7;
+                    queuedResponse = "\n<color=#BB3333>James:</color> But I didn't! Oh fine, have it your way you f***ing vultures! The number is " + databaseClient.getCardnum() + " the expiry is " + databaseClient.getExpirationdate() + " and the security code is " + databaseClient.getCode();
                     optionOneText.text = "Thank you James. Your computer will be unlocked shortly. Goodbye.";
                     optionTwoText.text = "Thank you. Goodbye.";
                     optionThreeText.text = "Goodbye";
-                    gotInfo = false;
+                    StartCoroutine(FinalReplyCoroutine());
+                }
+            }
+            else if (node == 3) //Node 3
+            {
+                if (selectedOption == 1)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    node = 4;
+                    queuedResponse = "\n<color=#BB3333>James:</color> Oh geez, I'm gonna regret this. The number is " + databaseClient.getCardnum() + " the expiry is " + databaseClient.getExpirationdate() + " and the security code is " + databaseClient.getCode();
+                    optionOneText.text = "Thank you for your time, James.";
+                    optionTwoText.text = "Goodbye James, have a good day.";
+                    optionThreeText.text = "Goodbye Mr.Johnson!";
+                    StartCoroutine(FinalReplyCoroutine());
+                }
+                else if (selectedOption == 2)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    node = 7;
+                    queuedResponse = "\n<color=#BB3333>James:</color> Do you think I'm an idiot!? F*** you!";
+                    optionOneText.text = "This is a bad idea!";
+                    optionTwoText.text = "I wouldn't go if I were you!";
+                    optionThreeText.text = "Don't disconnect!";
+                    StartCoroutine(FinalReplyCoroutine());
+                }
+                else
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    node = 7;
+                    queuedResponse = "\n<color=#BB3333>James:</color> Do you think I'm an idiot!? F*** you!";
+                    optionOneText.text = "This is a bad idea!";
+                    optionTwoText.text = "I wouldn't go if I were you!";
+                    optionThreeText.text = "Don't disconnect!";
+                    StartCoroutine(FinalReplyCoroutine());
+                }
+            }
+            else if (node == 5) //Node 5
+            {
+                if (selectedOption == 1)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    node = 6;
+                    queuedResponse = "\n<color=#BB3333>James:</color> Screw this! You can all go to hell!";
+                    optionOneText.text = "This is a bad idea!";
+                    optionTwoText.text = "I wouldn't go if I were you!";
+                    optionThreeText.text = "Don't disconnect!";
+                    StartCoroutine(FinalReplyCoroutine());
+                }
+                else if (selectedOption == 2)
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    node = 6;
+                    queuedResponse = "\n<color=#BB3333>James:</color> Screw this! You can all go to hell!";
+                    optionOneText.text = "This is a bad idea!";
+                    optionTwoText.text = "I wouldn't go if I were you!";
+                    optionThreeText.text = "Don't disconnect!";
+                    StartCoroutine(FinalReplyCoroutine());
+                }
+                else
+                {
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    node = 7;
+                    queuedResponse = "\n<color=#BB3333>James:</color> But I didn't! Oh fine, have it your way you f***ing vultures! The number is " + databaseClient.getCardnum() + " the expiry is " + databaseClient.getExpirationdate() + " and the security code is " + databaseClient.getCode();
+                    optionOneText.text = "Thank you James. Your computer will be unlocked shortly. Goodbye.";
+                    optionTwoText.text = "Thank you. Goodbye.";
+                    optionThreeText.text = "Goodbye";
+                    StartCoroutine(FinalReplyCoroutine());
                 }
             }
         }
@@ -178,25 +244,6 @@ public class ChatClientScript : MonoBehaviour {
         {
             StartCoroutine(ReplyCoroutine());
         }
-        else
-        {
-            if(selectedOption == 1)
-            {
-                userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
-                userChatText.text = userChatText.text + "\n<color=#555555>User disconnected</color>";
-            }
-            else if(selectedOption == 2)
-            {
-                userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
-                userChatText.text = userChatText.text + "\n<color=#555555>User disconnected</color>";
-            }
-            else
-            {
-                userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
-                userChatText.text = userChatText.text + "\n<color=#555555>User disconnected</color>";
-            }
-            node = 0;
-        }
         
         Canvas.ForceUpdateCanvases();
         GameObject.Find("UserChatTextBG").GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
@@ -211,6 +258,21 @@ public class ChatClientScript : MonoBehaviour {
         rightBtn.interactable = true;
         optionOne.SetActive(true);
         selectedOption = 1;
+    }
+
+    IEnumerator FinalReplyCoroutine()
+    {
+        yield return new WaitForSeconds(Random.Range(1, 5));
+        userChatText.text = userChatText.text + queuedResponse;
+        sendBtn.interactable = false;
+        leftBtn.interactable = false;
+        rightBtn.interactable = false;
+        optionOne.SetActive(false);
+
+        userChatText.text = userChatText.text + "\n<color=#555555>User disconnected</color>";
+
+        selectedOption = 1;
+        node = 0;
     }
 
     public void NewConversation()
