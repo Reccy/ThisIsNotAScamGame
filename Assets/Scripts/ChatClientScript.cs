@@ -18,6 +18,7 @@ public class ChatClientScript : MonoBehaviour {
     private Button leftBtn;
     private Button rightBtn;
     private Button sendBtn;
+    private Button skipBtn;
     private string queuedResponse;
     private int selectedOption;
     private int node;
@@ -39,6 +40,7 @@ public class ChatClientScript : MonoBehaviour {
         leftBtn = GameObject.FindGameObjectWithTag("LeftButton").GetComponent<Button>();
         rightBtn = GameObject.FindGameObjectWithTag("RightButton").GetComponent<Button>();
         sendBtn = GameObject.FindGameObjectWithTag("SendButton").GetComponent<Button>();
+        skipBtn = GameObject.FindGameObjectWithTag("SkipButton").GetComponent<Button>();
 
         sendBtn.interactable = false;
         leftBtn.interactable = false;
@@ -69,10 +71,10 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>James:</color> As if you don't already know. My computer won't turn on, it says that I need to pay a fine for watching child pornography by giving you my card information!?";
+                    queuedResponse = "\n<color=#BB3333>James:</color> As if you don't already know. My computer won't turn on, it says that I need to pay a fine for accessing illegal websites by giving you my card information!?";
                     optionOneText.text = "That's weird, you must have confused us with someone else. I'm afraid I can't help you.";
                     optionTwoText.text = "Well, we can remove the virus for you. We just need to verify your card details.";
-                    optionThreeText.text = "That's not a virus. It's a security feature to catch paedophiles. I think you should pay the fine.";
+                    optionThreeText.text = "That's not a virus. It's a security feature to catch computer criminals. I think you should pay the fine.";
                     finalNode = false;
                 }
                 else if (selectedOption == 2)
@@ -82,7 +84,7 @@ public class ChatClientScript : MonoBehaviour {
                     queuedResponse = "\n<color=#BB3333>James:</color> Do you actually expect me to f***ing pay YOU to remove the virus!? Remove it NOW before I take legal action!";
                     optionOneText.text = "I'm sorry Mr.Johnson, like I said we don't distribute viruses and I can remove the virus for a fee.";
                     optionTwoText.text = "James, I don't appreciate your tone. If you want the virus removed, just send me your details.";
-                    optionThreeText.text = "If you call the cops, they'll arrest you on charges of child pornography. Be smart about this.";
+                    optionThreeText.text = "If you call the cops, they'll arrest you on charges of computer crime. Be smart about this.";
                     finalNode = false;
                 }
                 else
@@ -92,7 +94,7 @@ public class ChatClientScript : MonoBehaviour {
                     queuedResponse = "\n<color=#BB3333>James:</color> Do you actually expect me to f***ing pay YOU to remove the virus!? Remove it NOW before I take legal action!";
                     optionOneText.text = "I'm sorry Mr.Johnson, like I said we don't distribute viruses and I can remove the virus for a fee.";
                     optionTwoText.text = "James, I don't appreciate your tone. If you want the virus removed, just send me your details.";
-                    optionThreeText.text = "If you call the cops, they'll arrest you on charges of child pornography. Be smart about this.";
+                    optionThreeText.text = "If you call the cops, they'll arrest you on charges of computer crime. Be smart about this.";
                     finalNode = false;
                 }
             }
@@ -106,7 +108,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionOneText.text = "Sorry we couldn't help you! Goodbye.";
                     optionTwoText.text = "Thank you. Goodbye.";
                     optionThreeText.text = "Goodbye";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
                 else if (selectedOption == 2)
                 {
@@ -149,7 +151,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionOneText.text = "This is a bad idea!";
                     optionTwoText.text = "I wouldn't go if I were you!";
                     optionThreeText.text = "Don't disconnect!";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
                 else
                 {
@@ -159,7 +161,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionOneText.text = "This is a bad idea!";
                     optionTwoText.text = "I wouldn't go if I were you!";
                     optionThreeText.text = "Don't disconnect!";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
             }
             else if (node == 5) //Node 5
@@ -172,7 +174,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionOneText.text = "This is a bad idea!";
                     optionTwoText.text = "I wouldn't go if I were you!";
                     optionThreeText.text = "Don't disconnect!";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
                 else if (selectedOption == 2)
                 {
@@ -182,7 +184,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionOneText.text = "This is a bad idea!";
                     optionTwoText.text = "I wouldn't go if I were you!";
                     optionThreeText.text = "Don't disconnect!";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
                 else
                 {
@@ -225,7 +227,7 @@ public class ChatClientScript : MonoBehaviour {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
                     node = 3;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> my naem is roger jenkins im agee 5";
-                    optionOneText.text = "Hi Roger. I can help you fix your computer but first I need your mom's credit card.";
+                    optionOneText.text = "Hi Roger. I can help you fix your computer but first I need you to steal your mom's credit card.";
                     optionTwoText.text = "Roger, can you get your mom for me?";
                     optionThreeText.text = "I'm sorry Roger, you're too young for this website. Have a nice day!";
                     finalNode = false;
@@ -237,21 +239,21 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>totally mr:</color> How dare you use my son to scam me of my money! Shame on you, you degenerate!";
+                    queuedResponse = "\n<color=#BB3333>totally mr:</color> i dont believ in magic i think ur lying mr bad man bai :(";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
                 else if (selectedOption == 2)
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>totally mr:</color> How dare you use my son to scam me of my money! Shame on you, you degenerate!";
+                    queuedResponse = "\n<color=#BB3333>totally mr:</color> my mom said ur not alowed her card and is shud stop talkin to u bai :)";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
                 else
                 {
@@ -294,7 +296,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
                     optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
             }
             else if (node == 3)
@@ -313,11 +315,11 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>totally mr:</color> wait mom ses dont talk to strangers i gtg bai :)";
+                    queuedResponse = "\n<color=#BB3333>totally mr:</color> How dare you use my son to scam me of my money! Shame on you, you degenerate!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
                 else
                 {
@@ -327,7 +329,7 @@ public class ChatClientScript : MonoBehaviour {
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
                     optionTwoText.text = "Go get your mom's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
-                    StartCoroutine(FinalReplyCoroutine());
+                    StartCoroutine(FailReplyCoroutine());
                 }
             }
         }
@@ -357,6 +359,8 @@ public class ChatClientScript : MonoBehaviour {
         rightBtn.interactable = true;
         optionOne.SetActive(true);
         selectedOption = 1;
+        Canvas.ForceUpdateCanvases();
+        GameObject.Find("UserChatTextBG").GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
     }
 
     IEnumerator FinalReplyCoroutine()
@@ -372,6 +376,26 @@ public class ChatClientScript : MonoBehaviour {
 
         selectedOption = 1;
         node = 0;
+        Canvas.ForceUpdateCanvases();
+        GameObject.Find("UserChatTextBG").GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+    }
+
+    IEnumerator FailReplyCoroutine()
+    {
+        yield return new WaitForSeconds(Random.Range(1, 5));
+        userChatText.text = userChatText.text + queuedResponse;
+        sendBtn.interactable = false;
+        leftBtn.interactable = false;
+        rightBtn.interactable = false;
+        optionOne.SetActive(false);
+
+        userChatText.text = userChatText.text + "\n<color=#555555>User disconnected</color>";
+        skipBtn.interactable = true;
+
+        selectedOption = 1;
+        node = 0;
+        Canvas.ForceUpdateCanvases();
+        GameObject.Find("UserChatTextBG").GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
     }
 
     public void NewConversation()
@@ -382,6 +406,8 @@ public class ChatClientScript : MonoBehaviour {
         optionOne.SetActive(false);
         optionTwo.SetActive(false);
         optionThree.SetActive(false);
+
+        skipBtn.interactable = false;
 
         if(peopleInformation.getPersonCurrent() == 2)
         {

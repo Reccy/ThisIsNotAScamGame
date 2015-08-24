@@ -30,7 +30,6 @@ public class DatabaseClientScript : MonoBehaviour {
     public string cardnum;
     public string expirationdate;
     public string code;
-    private bool cardAccepted;
 
 	void Start () 
     {
@@ -52,7 +51,6 @@ public class DatabaseClientScript : MonoBehaviour {
         codeInput = GameObject.FindGameObjectWithTag("SecurityCodeInput").GetComponent<InputField>();
         submitBtn = GameObject.FindGameObjectWithTag("SubmitBtn").GetComponent<Button>();
         clientBtn = GameObject.FindGameObjectWithTag("ClientBtn").GetComponent<Button>();
-        cardAccepted = false;
 	}
 
     public void ExitButtonClicked()
@@ -101,7 +99,6 @@ public class DatabaseClientScript : MonoBehaviour {
     {
         peopleInformation.nextPerson();
         statusText.text = "";
-        cardAccepted = false;
         cardnameInput.interactable = true;
         cardnameInput.text = "";
         cardnumInput.interactable = true;
@@ -153,13 +150,15 @@ public class DatabaseClientScript : MonoBehaviour {
         if(correctNum == 4)
         {
             statusText.text = "<color=#33BB33>CARD INFORMATION ACCEPTED!</color>";
-            cardAccepted = true;
             cardnameInput.interactable = false;
             cardnumInput.interactable = false;
             expirationdateInput.interactable = false;
             codeInput.interactable = false;
             submitBtn.interactable = false;
             clientBtn.interactable = true;
+            submitBtn.interactable = false;
+            GameInformation.peopleScammed++;
+            Debug.Log("People Scammed: " + GameInformation.peopleScammed);
         }
         else
         {
