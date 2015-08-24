@@ -916,7 +916,7 @@ public class ChatClientScript : MonoBehaviour {
         }
         else if (peopleInformation.getPersonCurrent() == 4) //Other woman
         {
-            queuedResponse = "\n<color=#555555>>Connected to user \"Carol\"</color>\n<color=#BB3333>Nancy:</color> Help me! I just got your USafe AntiVirus and it says that my computer is unsafe! What can I do!?";
+            queuedResponse = "\n<color=#555555>>Connected to user \"Carol\"</color>\n<color=#BB3333>Carol:</color> Help me! I just got your USafe AntiVirus and it says that my computer is unsafe! What can I do!?";
             optionOneText.text = "Hello Carol. If you send me your credit card information I can setup a USafe subscription for you.";
             optionTwoText.text = "Hello Carol. I would suggest buying a USafe subscription. That will remove any malware from your computer.";
             optionThreeText.text = "Hello Carol. I can help you configure USafe so that it will remove the malware for you.";
