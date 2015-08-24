@@ -29,11 +29,11 @@ public class PeopleInformation : MonoBehaviour {
 
         if(personCurrent == 1)
         {
-            databaseClient.setDetails(Random.Range(1000, 5000).ToString(), "James", "Johnson", "Ransomware", "James Johnson", Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString(), Random.Range(1, 12).ToString() + "/" + Random.Range(97, 99).ToString(), Random.Range(100, 900).ToString());
+            databaseClient.setDetails(Random.Range(1000, 5000).ToString(), "James", "Johnson", "\"Child Porn\" Ransomware", "James Johnson", Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString(), Random.Range(1, 12).ToString() + "/" + Random.Range(97, 99).ToString(), Random.Range(100, 900).ToString());
         }
         else if(personCurrent == 2)
         {
-            databaseClient.setDetails(Random.Range(1000, 5000).ToString(), "F***", "You", "Ransomware", "Richard Jenkins", Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString(), Random.Range(1, 12).ToString() + "/" + Random.Range(97, 99).ToString(), Random.Range(100, 900).ToString());
+            databaseClient.setDetails(Random.Range(1000, 5000).ToString(), "totally mr", "radical", "pls fix my computer", "Susan Jenkins", Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString() + "-" + Random.Range(1000, 5000).ToString(), Random.Range(1, 12).ToString() + "/" + Random.Range(97, 99).ToString(), Random.Range(100, 900).ToString());
             chatClient.NewConversation();
         }
         else if(personCurrent == 3)

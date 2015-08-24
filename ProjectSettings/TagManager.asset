@@ -30,6 +30,7 @@ TagManager:
   - LeftButton
   - RightButton
   - SendButton
+  - SkipButton
   layers:
   - Default
   - TransparentFX
