@@ -121,21 +121,12 @@ public class EndManager : MonoBehaviour {
                 l.Add("\nSeth was able to evade any major punishment from his boss");
                 l.Add("\nA year later, he became the CEO of MicroFirm Corporation");
             }
-            l.Add("\n");
-            l.Add("\nThis is NOT a scam!\nGame by Aaron Meaney {RECCY}");
+            l.Add("\n\nThis is NOT a scam!\nGame by Aaron Meaney {RECCY}");
             l.Add("\nFor Ludum Dare 33");
             l.Add("\nSpecial thanks to XtremePrime for playtesting!");
             l.Add("\nThanks for Playing!");
         }
         StartCoroutine(bootUp());
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown("enter") || Input.GetKeyDown("return"))
-        {
-            Application.LoadLevel("MainScene");
-        }
     }
 
     IEnumerator bootUp()
