@@ -494,7 +494,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Nancy:</color> Malware? I downloaded it from your website! I think you're a no-goos lying cheater! Good day!";
+                    queuedResponse = "\n<color=#BB3333>Nancy:</color> Malware? I downloaded it from your website! I think you're a no-good lying cheater! Good day!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your mom's credit card!";
                     optionThreeText.text = "Are you okay, sir?";
