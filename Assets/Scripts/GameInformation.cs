@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GameInformation : MonoBehaviour {
 
+    public static string pcName;
     public static int peopleScammed;
     public static bool scammedJames;
     public static bool scammedKid;
@@ -13,6 +14,7 @@ public class GameInformation : MonoBehaviour {
 	void Start () 
     {
         DontDestroyOnLoad(this);
+        pcName = "Riley";
         scammedJames = false;
         scammedKid = false;
         scammedOldLady = false;

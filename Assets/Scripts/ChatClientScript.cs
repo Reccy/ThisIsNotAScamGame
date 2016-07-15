@@ -54,11 +54,13 @@ public class ChatClientScript : MonoBehaviour {
         optionTwoText.text = "Hi James, I'm not aware of any virus that you have caught from us. We do offer a paid virus removal service.";
         optionThreeText.text = "Hi there James, I'm afraid that whatever virus you caught was not from us. If you want I can remove the virus for a fee?";
         node = 0;
-
-        StartCoroutine(ReplyCoroutine());
-
-        selectedOption = 1;
 	}
+
+    public void Begin()
+    {
+        StartCoroutine(ReplyCoroutine());
+        selectedOption = 1;
+    }
 
     public void SendButtonClicked()
     {

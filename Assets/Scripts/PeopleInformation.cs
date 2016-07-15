@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,8 +16,12 @@ public class PeopleInformation : MonoBehaviour {
         gameInfo = GameObject.FindGameObjectWithTag("GameInformation").GetComponent<GameInformation>();
         chatClient = GameObject.FindGameObjectWithTag("ChatClient").GetComponent<ChatClientScript>();
         personCurrent = 0;
-        nextPerson();
 	}
+
+    public void Begin()
+    {
+        nextPerson();
+    }
 
     public int getPersonCurrent()
     {
@@ -53,7 +58,7 @@ public class PeopleInformation : MonoBehaviour {
         }
         else
         {
-            Application.LoadLevel("EndScene");
+            SceneManager.LoadScene("EndScene");
         }
     }
 }
