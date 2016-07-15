@@ -12,11 +12,13 @@ public class CaretPatch : MonoBehaviour {
 
     private GameObject caret;
     private bool patchApplied;
-    public float xOffset, yOffset;
+    private float xOffset, yOffset;
 
-    void Start ()
+    void Start () //DISABLE PATCH - FIXED IN UNITY 5!
     {
         patchApplied = false;
+        xOffset = 0;
+        yOffset = 0;
     }
 
     void Update ()

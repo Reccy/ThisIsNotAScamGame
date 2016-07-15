@@ -94,6 +94,6 @@ public class IntroScript : MonoBehaviour {
                     break;
             }
         }
-        SceneManager.LoadScene("IntroScene");
+        SceneManager.LoadScene("MainScene");
     }
 }

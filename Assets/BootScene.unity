@@ -85,80 +85,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &666995671
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 666995672}
-  - 222: {fileID: 666995674}
-  - 114: {fileID: 666995673}
-  m_Layer: 5
-  m_Name: Copyright
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &666995672
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 666995671}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1537791074}
-  m_RootOrder: 3
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 232, y: -374}
-  m_SizeDelta: {x: 571, y: 28}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &666995673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 666995671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6691177, g: 0.6691177, b: 0.6691177, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: c057ca3cf84d81f42a78cd958dd85926, type: 3}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "This is NOT a Scam! \xA9 2016 Aaron Meaney"
---- !u!222 &666995674
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 666995671}
 --- !u!1 &806205087
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,9 +204,9 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -90.5, y: -60}
-  m_SizeDelta: {x: 99, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -19, y: -19}
+  m_SizeDelta: {x: 158, y: 159}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &830639149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +226,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fc802b8449df67b4080b0b62af36efa6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f52d67deda375443930389622e70f4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -402,7 +328,6 @@ RectTransform:
   - {fileID: 1990412047}
   - {fileID: 1798599699}
   - {fileID: 830639148}
-  - {fileID: 666995672}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
@@ -523,8 +448,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -90, y: -125}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -260.5, y: -737}
+  m_SizeDelta: {x: 483, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1798599700
 MonoBehaviour:
@@ -550,15 +475,15 @@ MonoBehaviour:
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 2
+    m_MaxSize: 235
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <color=#FF0000>U</color><color=#00FF00>n</color><color=#0000FF>i</color><color=#FFFF00>t</color><color=#00FFFF>y</color>VM
+  m_Text: "UNITY\u2122 VIRTUAL MACHINE {v5.3.5f}"
 --- !u!222 &1798599701
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -597,8 +522,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 398.25, y: -298}
-  m_SizeDelta: {x: 777.5, y: 584}
+  m_AnchoredPosition: {x: 398.25, y: -364}
+  m_SizeDelta: {x: 778, y: 716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990412048
 MonoBehaviour:
@@ -632,7 +557,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "UnityVM\u2122 Initiated - {Copyright 1997}"
+  m_Text: 'IF YOU ARE SEEING THIS THEN SOMETHING TERRIBLE HAS HAPPENED TO THIS GAME!
+    D:
+
+
+    SEND ME A MESSAGE ON ITCH.IO AND TELL ME HOW YOU MANAGED TO FIND THIS SCREEN SO
+    THAT I CAN FIX IT ;)
+
+
+    OTHER THAN THAT, THANKS FOR DOWNLOADING MY GAME AND HAVE FUN :D
+
+
+    -AARON MEANEY {@theReccy}'
 --- !u!222 &1990412049
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -31,6 +31,9 @@ TagManager:
   - RightButton
   - SendButton
   - SkipButton
+  - LoginClient
+  - UsernameLoginInput
+  - UsernameSubmitButton
   layers:
   - Default
   - TransparentFX
