@@ -8,11 +8,13 @@ public class IntroScript : MonoBehaviour {
 
     private List<string> preList; //List for initial rll-through of commands
     private List<string> introList; //List for initial game screen
-    private Text term;
+    private Text term; //Terminal output
+    private bool bootingUp; //If the bootup sequence has activated
 
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) { StartCoroutine(bootUp()); }
+        if (bootingUp && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))) { SceneManager.LoadScene("IntroScene"); } //Skips bootup sequence
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) { StartCoroutine(bootUp()); } //Starts bootup sequence
     }
 
 	void Start () 
@@ -22,43 +24,75 @@ public class IntroScript : MonoBehaviour {
 
         //Add data to pre list
 	    preList = new List<string>();
-        preList.Add("POWER GOOD");
-        preList.Add("CHECKING FOR VALID OPERATING SYSTEM");
-        preList.Add("FOUND WANDISK 97");
-        preList.Add("LOADING WANDISK 97");
-        preList.Add("FETCHING RESOURCE MANIFEST");
-        preList.Add("LOADING OPERATING SYSTEM RESOURCES");
-        preList.Add("Hpe5krXx1fsdfs3f3wfvYIkBbX38NB");
-        preList.Add("irPQE4pIw3fwfw55ywabCbb7wjTMu");
-        preList.Add("W45lj1yzDdbsdfsdAMDVDdVg1");
-        preList.Add("FnH3EttXwrjgdgsvz7pSAzfyiC8");
-        preList.Add("8hHjIzYMvavasvvc0CE6t6AhxF");
-        preList.Add("pvPhkorEXjrtjPkmvz5NsvvT");
-        preList.Add("Lk6mdMBwxk9YIdHlwBgB");
-        preList.Add("tKfB2WMEEib5262342gQPM1Q4wMpp");
-        preList.Add("vA2uOjdgLK4hsbK4m3mOQdB8");
-        preList.Add("gJfhD7WS54s2eqVQ8NvWvp");
-        preList.Add("oF1QMNWpwegaHzY9GtPQLt");
-        preList.Add("xtZ4wPEhTe3tTTTsbx1vZ2lmx0z");
-        preList.Add("vrwTu8tRkJcbxcvcsvhbI7Z0u");
-        preList.Add("QP0Zu7KZDgdfsdfw0dTrwMIs9");
-        preList.Add("SaL0Xuh23WmsdfsIzL3s1EQS");
-        preList.Add("9YbLboPGUHsdfNcUzvE2nVp");
-        preList.Add("KjOKj73dRwesdfsfsZ8VgLSrsS");
-        preList.Add("gsnsHSi4zSv422342424tgsf634pVTgrBKT2L");
-        preList.Add("d6yJDDBk423inQ4d9RXP5JH");
-        preList.Add("ubVOeRwLSAMmQ5opOUB0");
+        preList.Add("UNITY VM STARTED"); //0
+        preList.Add("CHECKING FOR VALID OPERATING SYSTEM"); //1
+        preList.Add("FOUND WANDISK 97"); //2
+        preList.Add("LOADING WANDISK 97"); //3
+        preList.Add("FETCHING RESOURCE MANIFEST"); //4
+        preList.Add("LOADING DRIVERS");
+        preList.Add("LOADING gfx.drv");
+        preList.Add("LOADING sound.drv");
+        preList.Add("LOADING net.drv");
+        preList.Add("LOADING io.drv");
+        preList.Add("LOADING print.drv");
+        preList.Add("DONE\n");
+        preList.Add("LOADING STARTUP PROGRAMS"); //12
+        preList.Add("wan_crack.exe");
+        preList.Add(">Bypassing authentication process"); //14
+        preList.Add(">DONE");
+        preList.Add("ssh_host.exe");
+        preList.Add(">Starting SSH on localhost:443"); //17
+        preList.Add(">DONE");
+        preList.Add("macrofirm_access.exe");
+        preList.Add("Accessing MacroFirm Customer Support Server"); //20
+        preList.Add(">DONE");
         preList.Add("RESOURCES LOADED");
-        preList.Add("STARTING WANDISK 97...");
+        preList.Add("VERIFYING STARTUP CONDITIONS"); //23
+        preList.Add("STARTUP COMPLELTE");
+        preList.Add("SWITCHING ENVIRONMENT: WANDISK 97"); //24
 	}
 
     IEnumerator bootUp()
     {
+        bootingUp = true;
         term.text = preList[0];
         for(int i = 1; i < preList.Count; i++)
         {
+            Debug.Log(i);
             term.text = term.text + "\n" + preList[i];
-            yield return new WaitForSeconds(0.04f);
+            switch (i) 
+            {
+                case 1:
+                    yield return new WaitForSeconds(0.6f);
+                    break;
+                case 2:
+                    yield return new WaitForSeconds(0.8f);
+                    break;
+                case 3:
+                    yield return new WaitForSeconds(0.5f);
+                    break;
+                case 4:
+                    yield return new WaitForSeconds(0.3f);
+                    break;
+                case 12:
+                    yield return new WaitForSeconds(0.8f);
+                    break;
+                case 14:
+                    yield return new WaitForSeconds(0.3f);
+                    break;
+                case 20:
+                    yield return new WaitForSeconds(0.8f);
+                    break;
+                case 23:
+                    yield return new WaitForSeconds(0.5f);
+                    break;
+                case 25:
+                    yield return new WaitForSeconds(2f);
+                    break;
+                default:
+                    yield return new WaitForSeconds(0.05f);
+                    break;
+            }
         }
         SceneManager.LoadScene("IntroScene");
     }
