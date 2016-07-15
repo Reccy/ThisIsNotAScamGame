@@ -10,9 +10,15 @@ public class IntroScript : MonoBehaviour {
     private List<string> introList; //List for initial game screen
     private Text term;
 
+    void Update ()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) { StartCoroutine(bootUp()); }
+    }
+
 	void Start () 
     {
         term = GameObject.Find("Terminal").GetComponent<Text>();
+        term.text = "\n\n\n\n\n\n\n\n\n\n\n\n\nThis is NOT a Scam!\nBy Aaron Meaney {@theReccy}\n\nPress <ENTER> to begin";
 
         //Add data to pre list
 	    preList = new List<string>();
@@ -44,8 +50,6 @@ public class IntroScript : MonoBehaviour {
         preList.Add("ubVOeRwLSAMmQ5opOUB0");
         preList.Add("RESOURCES LOADED");
         preList.Add("STARTING WANDISK 97...");
-        //Start intro
-        StartCoroutine(bootUp());
 	}
 
     IEnumerator bootUp()
@@ -54,7 +58,7 @@ public class IntroScript : MonoBehaviour {
         for(int i = 1; i < preList.Count; i++)
         {
             term.text = term.text + "\n" + preList[i];
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.04f);
         }
         SceneManager.LoadScene("IntroScene");
     }
