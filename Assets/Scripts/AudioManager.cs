@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour {
         if(mute)
         {
             GetComponent<AudioSource>().volume = 1;
-            fan.volume = 1;
+            fan.volume = 0.6f;
             mute = false;
             Debug.Log("UN-MUTED");
         }
