@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 
 public class GameStateManager : MonoBehaviour {
@@ -47,7 +48,7 @@ public class GameStateManager : MonoBehaviour {
 
     public void startGame()
     {
-        if(usernameField.GetComponent<Text>().text.Length != 0)
+        if(!ConsistsOfWhiteSpace(usernameField.GetComponent<Text>().text))
         {
             StartCoroutine(begin());
         }
@@ -57,9 +58,19 @@ public class GameStateManager : MonoBehaviour {
         }
     }
 
+    //Credits to "jamora": http://answers.unity3d.com/questions/559715/if-string-only-contains-spaces.html
+    private bool ConsistsOfWhiteSpace(string s)
+    {
+        foreach (char c in s)
+        {
+            if (c != ' ') return false;
+        }
+        return true;
+    }
+
     IEnumerator begin()
     {
-        GameInformation.pcName = usernameField.GetComponent<Text>().text;
+        GameInformation.pcName = usernameField.GetComponent<Text>().text.Trim();
         login.SetActive(false);
         yield return new WaitForSeconds(1f);
         email.SetActive(true);

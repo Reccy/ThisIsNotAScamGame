@@ -748,7 +748,6 @@ GameObject:
   - 222: {fileID: 190144310}
   - 114: {fileID: 190144309}
   - 114: {fileID: 190144308}
-  - 114: {fileID: 190144307}
   m_Layer: 5
   m_Name: InputField
   m_TagString: ExpirationDateInput
@@ -775,17 +774,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000010728815, y: 0.00000333786}
   m_SizeDelta: {x: 366, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &190144307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 190144305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6472077fac2972e468eaa794c66366b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &190144308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,7 +1300,6 @@ GameObject:
   - 222: {fileID: 551247227}
   - 114: {fileID: 551247226}
   - 114: {fileID: 551247225}
-  - 114: {fileID: 551247224}
   m_Layer: 5
   m_Name: InputField
   m_TagString: CardNumberInput
@@ -1339,17 +1326,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0000021457809, y: -0.0000042915344}
   m_SizeDelta: {x: 366, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &551247224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551247222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6472077fac2972e468eaa794c66366b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &551247225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3273,7 +3249,7 @@ GameObject:
   - 222: {fileID: 1088197388}
   - 114: {fileID: 1088197387}
   - 114: {fileID: 1088197386}
-  - 114: {fileID: 1088197385}
+  - 114: {fileID: 1088197389}
   m_Layer: 5
   m_Name: InputField
   m_TagString: UsernameLoginInput
@@ -3300,17 +3276,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000010728815, y: 0.00000333786}
   m_SizeDelta: {x: 366, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1088197385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1088197383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6472077fac2972e468eaa794c66366b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1088197386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3323,7 +3288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3359,7 +3324,18 @@ MonoBehaviour:
   m_CharacterLimit: 24
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1088197389}
+        m_MethodName: KeepActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
@@ -3407,6 +3383,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1088197383}
+--- !u!114 &1088197389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1088197383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f13e34399ab754f8417ccb2c715d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetedButton: {fileID: 376253213}
 --- !u!1 &1093663733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,7 +4688,6 @@ GameObject:
   - 222: {fileID: 1644748905}
   - 114: {fileID: 1644748904}
   - 114: {fileID: 1644748903}
-  - 114: {fileID: 1644748906}
   m_Layer: 5
   m_Name: InputField
   m_TagString: CardNameInput
@@ -4823,17 +4810,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1644748901}
---- !u!114 &1644748906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1644748901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6472077fac2972e468eaa794c66366b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1659284657
 GameObject:
   m_ObjectHideFlags: 0
@@ -5938,7 +5914,6 @@ GameObject:
   - 222: {fileID: 2116603179}
   - 114: {fileID: 2116603178}
   - 114: {fileID: 2116603177}
-  - 114: {fileID: 2116603176}
   m_Layer: 5
   m_Name: InputField
   m_TagString: SecurityCodeInput
@@ -5965,17 +5940,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000010728815, y: -0.000011920929}
   m_SizeDelta: {x: 366, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2116603176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2116603174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6472077fac2972e468eaa794c66366b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2116603177
 MonoBehaviour:
   m_ObjectHideFlags: 0
