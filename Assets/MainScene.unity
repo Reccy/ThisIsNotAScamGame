@@ -96,6 +96,7 @@ GameObject:
   - 222: {fileID: 19959633}
   - 114: {fileID: 19959632}
   - 114: {fileID: 19959631}
+  - 114: {fileID: 19959634}
   m_Layer: 5
   m_Name: SubmitButton
   m_TagString: Untagged
@@ -119,7 +120,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -120}
+  m_AnchoredPosition: {x: 0, y: -127}
   m_SizeDelta: {x: 100, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19959631
@@ -207,6 +208,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 19959629}
+--- !u!114 &19959634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 19959629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162779fb0d32fc547907804346cf99f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 19959629}
 --- !u!1 &58894995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,6 +1302,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 457779396}
+--- !u!1 &545017825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 545017826}
+  - 222: {fileID: 545017828}
+  - 114: {fileID: 545017827}
+  m_Layer: 5
+  m_Name: FromEmail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &545017826
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545017825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 855694869}
+  m_RootOrder: 4
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -158, y: 15.050003}
+  m_SizeDelta: {x: 100, y: 34.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &545017827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545017825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c057ca3cf84d81f42a78cd958dd85926, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'From: <color=#555555>Supervisor</color>'
+--- !u!222 &545017828
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545017825}
 --- !u!1 &551247222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,7 +1869,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 73619037}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2220,7 +2307,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Wandisk 97 - BUILD 3764
 
-    Unregistered Copy Detected'
+    Unregistered Copy'
 --- !u!222 &853526565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2259,6 +2346,7 @@ RectTransform:
   - {fileID: 138013293}
   - {fileID: 870976165}
   - {fileID: 19959630}
+  - {fileID: 545017826}
   m_Father: {fileID: 1045459530}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
@@ -2310,7 +2398,7 @@ GameObject:
   - 222: {fileID: 870976167}
   - 114: {fileID: 870976166}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2521,8 +2609,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73.350006, y: 135.49997}
-  m_SizeDelta: {x: 303.3, y: 29}
+  m_AnchoredPosition: {x: 0, y: 135.49997}
+  m_SizeDelta: {x: 450, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &911177081
 MonoBehaviour:
@@ -2556,7 +2644,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' You''ve got MAIL!'
+  m_Text: ' MacroFirm Internal E-Mail'
 --- !u!222 &911177082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5240,7 +5328,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SKIP!
+  m_Text: SKIP
 --- !u!222 &1805523870
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -44,6 +44,7 @@ public class GameStateManager : MonoBehaviour {
         build.SetActive(true);
         yield return new WaitForSeconds(0.8f);
         login.SetActive(true);
+        login.GetComponentInChildren<InputField>().Select();
     }
 
     public void startGame()
@@ -74,7 +75,7 @@ public class GameStateManager : MonoBehaviour {
         login.SetActive(false);
         yield return new WaitForSeconds(1f);
         email.SetActive(true);
-        GameObject.FindGameObjectWithTag("SupervisorNotice").GetComponent<Text>().text = "<color=#555555>Notice from SUPERVISOR:</color>\n" + GameInformation.pcName + ", this is your first day on the job so don't screw up!\n\nGet the client's card information and input it into our database. If you lose a client (you better not!) then skip onto the next one.\n\nI'll be keeping an eye on you.";
+        GameObject.FindGameObjectWithTag("SupervisorNotice").GetComponent<Text>().text = "Welcome back, " + GameInformation.pcName + "!\nI hope you enjoyed your vacation! Don't get annoyed, but protocol insists I have to remind you how to do your job.\n\n\"Scam the client. Put their information into our database. Skip the entry if they disconnect.\"\n\nI'll see you later!";
     }
 
     public void srslyStart()
