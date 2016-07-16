@@ -48,16 +48,16 @@ public class ChatClientScript : MonoBehaviour {
         optionOne.SetActive(false);
         optionTwo.SetActive(false);
         optionThree.SetActive(false);
-
-        queuedResponse = "<color=#555555>>Connected to user \"James\"</color>\n<color=#BB3333>James:</color> Okay, you deadbeats! I caught your goddamned virus. I want if off my computer now!";
-        optionOneText.text = "Hi James, my name is Riley and I'll be your support technician today. Could you explain the virus to me?";
-        optionTwoText.text = "Hi James, I'm not aware of any virus that you have caught from us. We do offer a paid virus removal service.";
-        optionThreeText.text = "Hi there James, I'm afraid that whatever virus you caught was not from us. If you want I can remove the virus for a fee?";
-        node = 0;
 	}
 
     public void Begin()
     {
+        queuedResponse = "<color=#555555>>Connected to user \"James\"</color>\n<color=#BB3333>James:</color> Okay, you deadbeats! I caught your goddamned virus. I want if off my computer now!";
+        optionOneText.text = "Hi James, my name is " + GameInformation.pcName + " and I'll be your support technician today. Could you explain the virus to me?";
+        optionTwoText.text = "Hi James, I'm not aware of any virus that you have caught from us. We do offer a paid virus removal service.";
+        optionThreeText.text = "Hi there James, I'm afraid that whatever virus you caught was not from us. If you want I can remove the virus for a fee?";
+        node = 0;
+
         StartCoroutine(ReplyCoroutine());
         selectedOption = 1;
     }
@@ -71,7 +71,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>James:</color> As if you don't already know. My computer won't turn on, it says that I need to pay a fine for accessing illegal websites by giving you my card information!?";
                     optionOneText.text = "That's weird, you must have confused us with someone else. I'm afraid I can't help you.";
@@ -81,7 +81,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 5;
                     queuedResponse = "\n<color=#BB3333>James:</color> Do you actually expect me to f***ing pay YOU to remove the virus!? Remove it NOW before I take legal action!";
                     optionOneText.text = "I'm sorry Mr.Johnson, like I said we don't distribute viruses and I can remove the virus for a fee.";
@@ -91,7 +91,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 5;
                     queuedResponse = "\n<color=#BB3333>James:</color> Do you actually expect me to f***ing pay YOU to remove the virus!? Remove it NOW before I take legal action!";
                     optionOneText.text = "I'm sorry Mr.Johnson, like I said we don't distribute viruses and I can remove the virus for a fee.";
@@ -104,7 +104,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>James:</color> Oh I'm sorry about that! I must have contacted the wrong people. I'm going now.";
                     optionOneText.text = "Sorry we couldn't help you! Goodbye.";
@@ -114,7 +114,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 3;
                     queuedResponse = "\n<color=#BB3333>James:</color> Why the hell do you need my details!? This is obviously a scam!";
                     optionOneText.text = "We just need the details to verify that you are the owner of the computer so that we can disable the virus.";
@@ -124,7 +124,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 7;
                     queuedResponse = "\n<color=#BB3333>James:</color> But I didn't! Oh fine, have it your way you f***ing vultures! The number is " + databaseClient.getCardnum() + " the expiry is " + databaseClient.getExpirationdate() + " and the security code is " + databaseClient.getCode();
                     optionOneText.text = "Thank you James. Your computer will be unlocked shortly. Goodbye.";
@@ -138,7 +138,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 4;
                     queuedResponse = "\n<color=#BB3333>James:</color> Oh geez, I'm gonna regret this. The number is " + databaseClient.getCardnum() + " the expiry is " + databaseClient.getExpirationdate() + " and the security code is " + databaseClient.getCode();
                     optionOneText.text = "Thank you for your time, James.";
@@ -149,7 +149,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 7;
                     queuedResponse = "\n<color=#BB3333>James:</color> Do you think I'm an idiot!? F*** you!";
                     optionOneText.text = "This is a bad idea!";
@@ -159,7 +159,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 7;
                     queuedResponse = "\n<color=#BB3333>James:</color> Do you think I'm an idiot!? F*** you!";
                     optionOneText.text = "This is a bad idea!";
@@ -172,7 +172,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 6;
                     queuedResponse = "\n<color=#BB3333>James:</color> Screw this! You can all go to hell!";
                     optionOneText.text = "This is a bad idea!";
@@ -182,7 +182,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 6;
                     queuedResponse = "\n<color=#BB3333>James:</color> Screw this! You can all go to hell!";
                     optionOneText.text = "This is a bad idea!";
@@ -192,7 +192,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 7;
                     queuedResponse = "\n<color=#BB3333>James:</color> But I didn't! Oh fine, have it your way you f***ing vultures! The number is " + databaseClient.getCardnum() + " the expiry is " + databaseClient.getExpirationdate() + " and the security code is " + databaseClient.getCode();
                     optionOneText.text = "Thank you James. Your computer will be unlocked shortly. Goodbye.";
@@ -209,7 +209,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> what's that? why does it matter? why's that?";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -219,7 +219,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> what's that? why does it matter? why's that?";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -229,7 +229,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 3;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> my naem is roger jenkins im agee 5";
                     optionOneText.text = "Hi Roger. I can help you fix your computer but first I need you to steal your mom's credit card.";
@@ -242,7 +242,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> i dont believ in magic i think ur lying mr bad man bai :(";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -252,7 +252,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> my mom said ur not alowed her card and is shud stop talkin to u bai :)";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -262,7 +262,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> y but can u fix my compooter";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -275,7 +275,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> hereu go " + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -286,7 +286,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> hereu go " + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -297,7 +297,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> wait wat :'(";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -310,7 +310,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> hereu go " + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -321,7 +321,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> How dare you use my son to scam me of my money! Shame on you, you degenerate!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -331,7 +331,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>totally mr:</color> nosop im rly 10000000000 ageee :'(";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -348,7 +348,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> I downloaded it from usafe.com. Is there a problem?";
                     optionOneText.text = "Why yes Madam, that is a malicious website. I'm afraid I can't help you today.";
@@ -358,7 +358,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 4;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> Yes. I'm talking to you on the computer right now. What should I do?";
                     optionOneText.text = "If you give me your card information, I can activate the product on my end.";
@@ -368,7 +368,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 3;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> I'm sorry mister, but I already paid for my subscription. Why do you need my card again?";
                     optionOneText.text = "I'm going to charge and then refund the subscription money to your account to activate the subscription.";
@@ -381,7 +381,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> I'm sorry for wasting your time mister. Have a nice day!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -391,7 +391,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> Allright, I've done that. Oh, it's working now! Thank you very much mister!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -402,7 +402,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> I told you that I already paid for it. If I spend any more money, I won't be able to afford my medication.";
                     optionOneText.text = "I just need to verify that you actually paid for the subscription. We won't charge you.";
@@ -415,7 +415,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> Alright then mister. Here you go, and thanks for your help! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -426,7 +426,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> You're no help at all mister. Good day to you!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -436,7 +436,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> You're a right monster you are! I can hardly believe you would have someone arrest me. Fine, take it! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -450,7 +450,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> That's mighty kind of you mister! Here you go, and thanks for your help! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -461,7 +461,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> You're no help at all mister! Good day to you!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -471,7 +471,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> What? I did nothing wrong, mister! I think you're trying to swindle me! Good day to you!";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -484,7 +484,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> I told you that I already paid for it. If I spend any more money, I won't be able to afford my medication.";
                     optionOneText.text = "I just need to verify that you actually paid for the subscription. We won't charge you.";
@@ -494,7 +494,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> Malware? I downloaded it from your website! I think you're a no-good lying cheater! Good day!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -504,7 +504,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Nancy:</color> Oh, it looks like it worked mister! Thank you very much for your help!";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -521,7 +521,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> I'm not going to send you my card information over the internet. I don't trust you.";
                     optionOneText.text = "That's no problem miss. If you want I can tell you how to setup a USafe subscription?";
@@ -531,7 +531,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 3;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Well, why should I go with USafe and not Wandisk Warrior?";
                     optionOneText.text = "USafe includes over 1000 AntiVirus engines, so nothing will ever bypass it!";
@@ -541,7 +541,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 4;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Allright then, tell me what I have to do.";
                     optionOneText.text = "On the control panel, click on the subscribe button and insert your card details.";
@@ -554,7 +554,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Allright then, tell me what I should do.";
                     optionOneText.text = "On the control panel, click on the subscribe button and insert your card details.";
@@ -564,7 +564,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> For the last time, no! You're one relentless son of a b***h!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -574,7 +574,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> For the last time, no! You're one relentless son of a b***h!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -587,7 +587,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Allright! That's done. Thanks for your help!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -598,7 +598,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> For the last time, no! You're one relentless son of a b***h!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -608,7 +608,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Okay, like this? {" + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode() + "}";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -622,7 +622,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Wow, that sounds like a good deal to me! I'm going to subscribe now! Thanks alot!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -633,7 +633,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> But Wandisk Warrior always self-updates! In fact, it says that USafe is a virus! Oh, now I see what's going on! F*** you!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -643,7 +643,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> I just asked my husband about it and he says that you're trying to scam me! F*** you, you thief!";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -656,7 +656,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Allright, that's done! Thanks for your help!";
                     optionOneText.text = "I just need to verify that you actually paid for the subscription. We won't charge you.";
@@ -667,7 +667,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Allright then, here you go! The card is under the name of " + databaseClient.getCardname() + " and the card number is " + databaseClient.getCardnum() + " it expired on " + databaseClient.getExpirationdate() + " and the code is " + databaseClient.getCode();
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -678,7 +678,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Okay, like this? {" + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode() + "}";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -695,7 +695,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> What the f*** are you talking about!? Do you think me a moron!? Unlock the damn computer!!!!!!";
                     optionOneText.text = "I need your credit card information to send an unlock code.";
@@ -705,7 +705,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> Just f***ing unlock it already! If my boss finds out I'll be fired! PLEASE! I have a wife and kids!";
                     optionOneText.text = "Okay fine, I'm sending the unlock code now. It's 4196134.";
@@ -715,7 +715,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 3;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> DUDE! PLEASE UNLOCK THE COMPUTER BEFORE MY BOSS FIRES ME AND RUINS MY LIFE!";
                     optionOneText.text = "Allright then. Give me your credit card info and I'll unlock the computer.";
@@ -728,7 +728,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> FINE! Just unlock my computer before my boss comes back! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "On the control panel, click on the subscribe button and insert your card details.";
@@ -739,7 +739,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> Finally! Thanks for the free code! I kinda hate you slightly less now!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -749,7 +749,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> Jesus Christ! You ain't even serious! Fine, take the details!" + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -763,7 +763,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> It's fixed! Thank you so much man! If I had to pay you, my wife would have thrown me out for losing my job! Thank you!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -773,7 +773,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> You're a f***ing unfeeling monster! Do you have any sympathy!? Take the details! My wife is going to kill me! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -784,7 +784,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> God, alright! Fine! You'll get yours you f***ing lowlife! " + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
@@ -798,7 +798,7 @@ public class ChatClientScript : MonoBehaviour {
             {
                 if (selectedOption == 1)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionOneText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> Dude, my wife is going to kill me! Fine, here! Now unlock the damn computer! " + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -809,7 +809,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else if (selectedOption == 2)
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionTwoText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> What!? You aren't even gaining anything by doing this! Dude, don't go! This will ruin me!";
                     optionOneText.text = "It will fix your computer. It's magic, kid! But I need your mom's credit card.";
@@ -819,7 +819,7 @@ public class ChatClientScript : MonoBehaviour {
                 }
                 else
                 {
-                    userChatText.text = userChatText.text + "\n<color=#3333BB>Riley@MF:</color> " + optionThreeText.text;
+                    userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> Oh thank you! You should give up this line of work.";
                     optionOneText.text = "Go get your mom's card and type out what's on the card.";
