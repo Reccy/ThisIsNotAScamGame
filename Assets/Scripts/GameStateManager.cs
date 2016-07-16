@@ -15,9 +15,11 @@ public class GameStateManager : MonoBehaviour {
     private GameObject build;
     private GameObject email;
     private GameObject usernameField;
+    private GameObject soundToggle;
     private PeopleInformation people;
 
 	void Start () {
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("StartupBeep");
         done = false;
         loggedIn = false;
         database = GameObject.FindGameObjectWithTag("DatabaseClient");
@@ -28,6 +30,7 @@ public class GameStateManager : MonoBehaviour {
         email = GameObject.FindGameObjectWithTag("EmailClient");
         usernameField = GameObject.FindGameObjectWithTag("Username");
         people = GameObject.FindGameObjectWithTag("PeopleInformation").GetComponent<PeopleInformation>();
+        soundToggle = GameObject.FindGameObjectWithTag("SoundToggle");
 
         database.SetActive(false);
         login.SetActive(false);
@@ -35,6 +38,7 @@ public class GameStateManager : MonoBehaviour {
         taskbar.SetActive(false);
         email.SetActive(false);
         build.SetActive(false);
+        soundToggle.SetActive(false);
 
         StartCoroutine(startUp());
 	}
@@ -43,10 +47,13 @@ public class GameStateManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(2.4f);
         taskbar.SetActive(true);
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("ProgramBeep");
         yield return new WaitForSeconds(0.2f);
         build.SetActive(true);
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("ProgramBeep");
         yield return new WaitForSeconds(0.8f);
         login.SetActive(true);
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("ProgramBeep");
         login.GetComponentInChildren<InputField>().Select();
     }
 
@@ -78,6 +85,8 @@ public class GameStateManager : MonoBehaviour {
         login.SetActive(false);
         yield return new WaitForSeconds(1f);
         email.SetActive(true);
+        soundToggle.SetActive(true);
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("ProgramBeep");
         GameObject.FindGameObjectWithTag("SupervisorNotice").GetComponent<Text>().text = "Welcome back, " + GameInformation.pcName + "!\nI hope you enjoyed your vacation! Don't get annoyed, but protocol insists I have to remind you how to do your job.\n\n\"Scam the client. Put their information into our database. Skip the entry if they disconnect.\"\n\nI'll see you later!";
     }
 
@@ -98,9 +107,11 @@ public class GameStateManager : MonoBehaviour {
         email.SetActive(false);
         yield return new WaitForSeconds(1.2f);
         chat.SetActive(true);
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("ProgramBeep");
         chat.GetComponent<ChatClientScript>().Begin();
         yield return new WaitForSeconds(0.3f);
         database.SetActive(true);
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("ProgramBeep");
         people.Begin();
     }
 
@@ -117,6 +128,7 @@ public class GameStateManager : MonoBehaviour {
         yield return new WaitForSeconds(2);
 
         email.SetActive(true);
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("ProgramBeep");
         Text t = GameObject.FindGameObjectWithTag("SupervisorNotice").GetComponent<Text>();
 
         switch (GameInformation.peopleScammed)

@@ -39,6 +39,8 @@ TagManager:
   - Username
   - EmailClient
   - SupervisorNotice
+  - AudioManager
+  - SoundToggle
   layers:
   - Default
   - TransparentFX

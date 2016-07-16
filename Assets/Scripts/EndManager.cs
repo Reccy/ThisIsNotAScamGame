@@ -9,6 +9,15 @@ public class EndManager : MonoBehaviour {
     private Text term;
     private int cashStolen;
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            Debug.Log("QUIT");
+        }
+    }
+
     void Start()
     {
         term = GameObject.Find("Terminal").GetComponent<Text>();
@@ -56,7 +65,7 @@ public class EndManager : MonoBehaviour {
             l.Add("\nGame by Aaron Meaney {RECCY}");
             l.Add("\nOriginally for Ludum Dare 33");
             l.Add("\nSpecial thanks to XtremePrime for playtesting!");
-            l.Add("\nThanks for Playing!");
+            l.Add("\nThanks for Playing!\n\n\n[Press ESC to Exit!]");
         }
         else
         {
@@ -123,7 +132,7 @@ public class EndManager : MonoBehaviour {
             l.Add("\n\nThis is NOT a scam!\nGame by Aaron Meaney {RECCY}");
             l.Add("\nOriginally for Ludum Dare 33");
             l.Add("\nSpecial thanks to XtremePrime for playtesting!");
-            l.Add("\nThanks for Playing!");
+            l.Add("\nThanks for Playing!\n\n\n[Press ESC to Exit!]");
         }
         StartCoroutine(bootUp());
     }

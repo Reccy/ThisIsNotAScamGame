@@ -856,6 +856,7 @@ public class ChatClientScript : MonoBehaviour {
         selectedOption = 1;
         Canvas.ForceUpdateCanvases();
         GameObject.Find("UserChatTextBG").GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("Notification");
     }
 
     IEnumerator FinalReplyCoroutine()
@@ -873,6 +874,7 @@ public class ChatClientScript : MonoBehaviour {
         node = 0;
         Canvas.ForceUpdateCanvases();
         GameObject.Find("UserChatTextBG").GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("Notification");
     }
 
     IEnumerator FailReplyCoroutine()
@@ -891,6 +893,7 @@ public class ChatClientScript : MonoBehaviour {
         node = 0;
         Canvas.ForceUpdateCanvases();
         GameObject.Find("UserChatTextBG").GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("Notification");
     }
 
     IEnumerator AutoReplyCoroutine()

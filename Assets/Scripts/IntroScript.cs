@@ -60,6 +60,7 @@ public class IntroScript : MonoBehaviour {
         {
             Debug.Log(i);
             term.text = term.text + "\n" + preList[i];
+            GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlaySound("CliBeep");
             switch (i) 
             {
                 case 1:
