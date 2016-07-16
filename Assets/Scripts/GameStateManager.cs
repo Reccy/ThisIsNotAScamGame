@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
 
 public class GameStateManager : MonoBehaviour {
 
+    private bool done;
     private bool loggedIn;
     private GameObject database;
     private GameObject login;
@@ -16,6 +18,7 @@ public class GameStateManager : MonoBehaviour {
     private PeopleInformation people;
 
 	void Start () {
+        done = false;
         loggedIn = false;
         database = GameObject.FindGameObjectWithTag("DatabaseClient");
         login = GameObject.FindGameObjectWithTag("LoginClient");
@@ -80,7 +83,14 @@ public class GameStateManager : MonoBehaviour {
 
     public void srslyStart()
     {
-        StartCoroutine(srslyBegin());
+        if(!done)
+        {
+            StartCoroutine(srslyBegin());
+        }
+        else
+        {
+            SceneManager.LoadScene("EndScene");
+        }
     }
 
     IEnumerator srslyBegin()
@@ -92,5 +102,46 @@ public class GameStateManager : MonoBehaviour {
         yield return new WaitForSeconds(0.3f);
         database.SetActive(true);
         people.Begin();
+    }
+
+    public void endGame()
+    {
+        done = true;
+        database.SetActive(false);
+        chat.SetActive(false);
+        StartCoroutine(reallyEndGame());
+    }
+
+    IEnumerator reallyEndGame()
+    {
+        yield return new WaitForSeconds(2);
+
+        email.SetActive(true);
+        Text t = GameObject.FindGameObjectWithTag("SupervisorNotice").GetComponent<Text>();
+
+        switch (GameInformation.peopleScammed)
+        {
+            case 0:
+                t.text = "Did you actually forget how to do your job!?\n\nYou idiot! You lost FIVE CLIENTS!\n\nAre you trying to get fired? It doesn't matter. You're fired.\n\nGet out.";
+                break;
+            case 1:
+                t.text = "You only got one? What the hell happened!? You used to be the best damn scam artist this company has ever seen!\n\nYou're on probation. We'll see if you can keep your job.";
+                break;
+            case 2:
+                t.text = "Looks like you had a bad day.\n\nDon't worry, it's happened to all of us. Better luck tomorrow, eh?";
+                break;
+            case 3:
+                t.text = "Good Job!\n\nIt's good to have you back, " + GameInformation.pcName + "!\n\nI'll see you tomorrow!";
+                break;
+            case 4:
+                t.text = "Impressive!\n\nI missed having you around, nobody can scam quite like you!\n\nMaybe we should send you on vacation more often!";
+                break;
+            case 5:
+                t.text = "A PERFECT DAY!\n\nI don't think that's ever happened before! And on your first day back too!\n\nI'll send you an invitation for the executive party tonight. Don't be late!";
+                break;
+            default:
+                t.text = "<color=#d10f08>cheater</color>";
+                break;
+        }
     }
 }

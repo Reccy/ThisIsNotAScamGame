@@ -469,16 +469,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '<color=#555555>Notice from SUPERVISOR:</color>
-
-    $CHARNAME, this is your first day on the job so don''t screw up!
-
-
-    Get the client''s card information and input it into our database. If you lose
-    a client (you better not!) then skip onto the next one.
-
-
-    I''ll be keeping an eye on you.'
+  m_Text: SAMPLE TEXT
 --- !u!222 &138013295
 CanvasRenderer:
   m_ObjectHideFlags: 0

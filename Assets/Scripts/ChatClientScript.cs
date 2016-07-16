@@ -709,7 +709,7 @@ public class ChatClientScript : MonoBehaviour {
                     node = 2;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> Just unlock it already! If my boss finds out I'll be fired! PLEASE! I have a wife and kids!";
                     optionOneText.text = "Okay fine, I'm sending the unlock code now. It's 4196134.";
-                    optionTwoText.text = "I don't care. Send me your details or be a hobo. Either way suits me fine.";
+                    optionTwoText.text = "I don't care. Send me your details. Either way suits me fine.";
                     optionThreeText.text = "Listen, I just need your card information to unlock the computer.";
                     finalNode = false;
                 }

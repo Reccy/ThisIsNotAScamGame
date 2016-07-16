@@ -11,7 +11,6 @@ public class EndManager : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log("James scammed: " + GameInformation.scammedJames);
         term = GameObject.Find("Terminal").GetComponent<Text>();
         cashStolen = 0;
 
@@ -21,11 +20,11 @@ public class EndManager : MonoBehaviour {
         }
         if(GameInformation.scammedKid)
         {
-            cashStolen += 748;
+            cashStolen += 1748;
         }
         if(GameInformation.scammedOldLady)
         {
-            cashStolen += 102;
+            cashStolen += 52;
         }
         if(GameInformation.scammedOtherLady)
         {
@@ -33,35 +32,35 @@ public class EndManager : MonoBehaviour {
         }
         if(GameInformation.scammedAngryGuy)
         {
-            cashStolen += 12489;
+            cashStolen += 8489;
         }
 
         l = new List<string>();
 
         if(GameInformation.peopleScammed == 0)
         {
-            l.Add("\nYou scammed nobody");
-            l.Add("\nThis was either by choice or by bad luck");
-            l.Add("\nYour boss demands to see you in his office");
-            l.Add("\nYou try to explain the situation, but he doesn't listen");
-            l.Add("\nYou are under probation for a month");
-            l.Add("\nIt's not nearly a good enough punishment after");
-            l.Add("\nyou scammed thousands of people yesterday");
-            l.Add("\nand the day before that");
-            l.Add("\nand the week before that");
-            l.Add("\nand the month before that");
-            l.Add("\nand the year before that");
-            l.Add("\nYou still have more than enough money to retire\nAfter all, \"You are the Monster\"");
+            l.Add("\nYou didn't scam anybody.");
+            l.Add("\nThis was either by choice or by bad luck.");
+            l.Add("\nYour boss demands to see you in his office.");
+            l.Add("\nYou try to explain the situation, but he doesn't listen.");
+            l.Add("\nYou are under probation for a month.");
+            l.Add("\nIt's not nearly a good enough punishment.");
+            l.Add("\nYou scammed thousands of people yesterday.");
+            l.Add("\nand the day before that...");
+            l.Add("\nand the week before that...");
+            l.Add("\nand the month before that...");
+            l.Add("\nand the year before that...");
+            l.Add("\nYou still have more than enough money to retire.");
             l.Add("\n");
             l.Add("\nThis is NOT a scam!");
             l.Add("\nGame by Aaron Meaney {RECCY}");
-            l.Add("\nFor Ludum Dare 33");
+            l.Add("\nOriginally for Ludum Dare 33");
             l.Add("\nSpecial thanks to XtremePrime for playtesting!");
             l.Add("\nThanks for Playing!");
         }
         else
         {
-            l.Add("\nYou scammed a total of $" + cashStolen);
+            l.Add("\nYou gained a total of $" + cashStolen);
             if(GameInformation.peopleScammed == 1)
             {
                 l.Add("\nfrom " + GameInformation.peopleScammed + " gullible yet innocent person");
@@ -70,59 +69,59 @@ public class EndManager : MonoBehaviour {
             {
                 l.Add("\nfrom " + GameInformation.peopleScammed + " gullible yet innocent people");
             }
-            l.Add("\nI hope you're proud of yourself, you monster.\n");
+            l.Add("\nI hope you're proud of yourself.\n");
             if(GameInformation.scammedJames)
             {
-                l.Add("\nJames lost all of the money he was saving up for college");
-                l.Add("\nHe dropped out because he couldn't pay his tuition\n");
+                l.Add("\nJames lost all of the money he was saving up for college.");
+                l.Add("\nHe dropped out because he couldn't pay his tuition.\n");
             }
             else
             {
-                l.Add("\nJames managed to evade your trickery and avoid your scam");
-                l.Add("\nLater, he graduated from college with a BSc in Computer Science\n");
+                l.Add("\nJames managed to evade your trickery and avoid your scam.");
+                l.Add("\nLater, he graduated from college with an accounting degree.\n");
             }
             if(GameInformation.scammedKid)
             {
-                l.Add("\nRoger's mom lost what little money she had after your scam");
-                l.Add("\nSusan began to take illegal work to try and support her child\n");
+                l.Add("\nRoger's mom lost what little money she had after your scam.");
+                l.Add("\nHer child was taken from her soon afterwards.\n");
             }
             else
             {
-                l.Add("\nSusan's bank account is safe from harm after your scam attempt");
-                l.Add("\nSoon after, she manages to find a well paying job\n");
+                l.Add("\nSusan's bank account is safe from harm after your scam attempt.");
+                l.Add("\nSoon after, she manages to find a well paying job.\n");
             }
             if(GameInformation.scammedOldLady)
             {
-                l.Add("\nOld Mrs. Clark couldn't afford her heart medication because of you");
-                l.Add("\n4 days later, she died of a severe heart attack.\n");
+                l.Add("\nOld Nancy Clark couldn't afford her heart medication because of you.");
+                l.Add("\nA week later, she died of a severe heart attack.\n");
             }
             else
             {
-                l.Add("\nOld Mrs. Clark had just enough money left to pay for her medicine");
-                l.Add("\nThe next month, she succesfully passed her heart operation\n");
+                l.Add("\nOld Nancy Clark had just enough money left to pay for her medicine.");
+                l.Add("\nThe next month, she succesfully passed her heart operation.\n");
             }
             if(GameInformation.scammedOtherLady)
             {
-                l.Add("\nCarol installed USafe and it encrypted her entire hard drive");
-                l.Add("\nShe lost all of her files and consequently, her job\n");
+                l.Add("\nCarol installed USafe and it encrypted her entire hard drive.");
+                l.Add("\nShe lost all of her important files and consequently, her job.\n");
             }
             else
             {
-                l.Add("\nCarol installed Wandisk Warrior and her computer was safe");
+                l.Add("\nCarol installed Wandisk Warrior and her computer was safe.");
                 l.Add("\nShe was promoted to head of marketing at her job soon after.\n");
             }
             if(GameInformation.scammedAngryGuy)
             {
-                l.Add("\nSeth's wife divorced him after finding out he lost so much");
-                l.Add("\nHe spent his final days begging on the streets\n");
+                l.Add("\nSeth lost his job after his bank account was hacked.");
+                l.Add("\nHe was subsequently divorced by his wife.\n");
             }
             else
             {
-                l.Add("\nSeth was able to evade any major punishment from his boss");
-                l.Add("\nA year later, he became the CEO of MicroFirm Corporation");
+                l.Add("\nSeth was able to delete the ransomware with the help of IT.");
+                l.Add("\nA year later, he became the CTO of his company.");
             }
             l.Add("\n\nThis is NOT a scam!\nGame by Aaron Meaney {RECCY}");
-            l.Add("\nFor Ludum Dare 33");
+            l.Add("\nOriginally for Ludum Dare 33");
             l.Add("\nSpecial thanks to XtremePrime for playtesting!");
             l.Add("\nThanks for Playing!");
         }
@@ -131,7 +130,6 @@ public class EndManager : MonoBehaviour {
 
     IEnumerator bootUp()
     {
-        Debug.Log("BOOTING");
         yield return new WaitForSeconds(2);
         term.text = term.text + l[0];
         yield return new WaitForSeconds(2);

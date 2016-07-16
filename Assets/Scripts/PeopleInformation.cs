@@ -58,7 +58,7 @@ public class PeopleInformation : MonoBehaviour {
         }
         else
         {
-            SceneManager.LoadScene("EndScene");
+            GameObject.FindGameObjectWithTag("GameInformation").GetComponent<GameStateManager>().endGame();
         }
     }
 }
