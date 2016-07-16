@@ -53,6 +53,32 @@ public class DatabaseClientScript : MonoBehaviour {
         clientBtn = GameObject.FindGameObjectWithTag("ClientBtn").GetComponent<Button>();
 	}
 
+    void Update()
+    {
+        if(cardnameInput.interactable && cardnumInput.interactable && expirationdateInput.interactable && codeInput.interactable)
+        {
+            if(Input.GetKeyDown(KeyCode.Tab))
+            {
+                if(cardnameInput.isFocused)
+                {
+                    cardnumInput.Select();
+                }
+                else if(cardnumInput.isFocused)
+                {
+                    expirationdateInput.Select();
+                }
+                else if(expirationdateInput.isFocused)
+                {
+                    codeInput.Select();
+                }
+                else if(codeInput.isFocused)
+                {
+                    cardnameInput.Select();
+                }
+            }
+        }
+    }
+
     public void ExitButtonClicked()
     {
         databaseClient.SetActive(false);
@@ -124,7 +150,6 @@ public class DatabaseClientScript : MonoBehaviour {
         codeInput.interactable = false;
         submitBtn.interactable = false;
         clientBtn.interactable = true;
-        submitBtn.interactable = false;
         GameInformation.peopleScammed++;
         Debug.Log("People Scammed: " + GameInformation.peopleScammed);
     }
@@ -133,40 +158,29 @@ public class DatabaseClientScript : MonoBehaviour {
     {
         int correctNum = 0;
 
-        if(cardnameText.text != cardname)
-        {
-        }
-        else
+        if(cardnameText.text == cardname)
         {
             correctNum++;
         }
 
-        if (cardnumText.text != cardnum)
-        {
-        }
-        else
+        if (cardnumText.text == cardnum)
         {
             correctNum++;
         }
 
-        if (expirationdateText.text != expirationdate)
-        {
-        }
-        else
+        if (expirationdateText.text == expirationdate)
         {
             correctNum++;
         }
 
-        if (codeText.text != code)
-        {
-        }
-        else
+        if (codeText.text == code)
         {
             correctNum++;
         }
 
         if(correctNum == 4)
         {
+            Debug.Log("Submit Button Active: " + submitBtn.interactable);
             statusText.text = "<color=#33BB33>CARD INFORMATION ACCEPTED!</color>";
             cardnameInput.interactable = false;
             cardnumInput.interactable = false;
@@ -174,9 +188,9 @@ public class DatabaseClientScript : MonoBehaviour {
             codeInput.interactable = false;
             submitBtn.interactable = false;
             clientBtn.interactable = true;
-            submitBtn.interactable = false;
             GameInformation.peopleScammed++;
             Debug.Log("People Scammed: " + GameInformation.peopleScammed);
+            Debug.Log("Submit Button Active: " + submitBtn.interactable);
         }
         else
         {

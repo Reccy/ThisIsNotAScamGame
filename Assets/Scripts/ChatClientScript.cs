@@ -523,7 +523,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Carol:</color> I'm not going to send you my card information over the internet. I don't trust you.";
+                    queuedResponse = "\n<color=#BB3333>Carol:</color> I'm not going to send you my card information over the internet. I've been scammed before!";
                     optionOneText.text = "That's no problem miss. If you want I can tell you how to setup a USafe subscription?";
                     optionTwoText.text = "Well, in order to use USafe you require a subscription. The only way to set it up is for you to give me your details.";
                     optionThreeText.text = "Ma'am. The easiest way to solve this situation is to just send me your card info.";
@@ -544,9 +544,9 @@ public class ChatClientScript : MonoBehaviour {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 4;
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Alright then, tell me what I have to do.";
-                    optionOneText.text = "On the control panel, click on the subscribe button and insert your card details.";
+                    optionOneText.text = "On the control panel, you just have to click on the subscribe button and insert your card details.";
                     optionTwoText.text = "You just need to tell me your card details and I'll setup a subscription for you.";
-                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this {details here}.";
+                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this {HIDDEN_DATA}.";
                     finalNode = false;
                 }
             }
@@ -559,14 +559,14 @@ public class ChatClientScript : MonoBehaviour {
                     queuedResponse = "\n<color=#BB3333>Carol:</color> Alright then, tell me what I should do.";
                     optionOneText.text = "On the control panel, click on the subscribe button and insert your card details.";
                     optionTwoText.text = "Like I said earlier, I just need your card details.";
-                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this {details here}.";
+                    optionThreeText.text = "Type your card details inside square brackets so I can't see them. Like this {HIDDEN_DATA}.";
                     finalNode = false;
                 }
                 else if (selectedOption == 2)
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Carol:</color> For the last time, no! You're one relentless son of a b***h!";
+                    queuedResponse = "\n<color=#BB3333>Carol:</color> No! I'll just ask my son to help me then. Goodbye!";
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -576,7 +576,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Carol:</color> For the last time, no! You're one relentless son of a b***h!";
+                    queuedResponse = "\n<color=#BB3333>Carol:</color> No! I'll just ask my son to help me then. Goodbye!";
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -600,7 +600,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Carol:</color> For the last time, no! You're one relentless son of a b***h!";
+                    queuedResponse = "\n<color=#BB3333>Carol:</color> No! I'll just ask my son to help me then. Goodbye!";
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -624,7 +624,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Carol:</color> Wow, that sounds like a good deal to me! I'm going to subscribe now! Thanks alot!";
+                    queuedResponse = "\n<color=#BB3333>Carol:</color> Wow, that sounds like a good deal to me! I'm going to subscribe now! Thanks you!";
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -635,7 +635,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Carol:</color> But Wandisk Warrior always self-updates! In fact, it says that USafe is a virus! Oh, now I see what's going on! F*** you!";
+                    queuedResponse = "\n<color=#BB3333>Carol:</color> But Wandisk Warrior always self-updates! In fact, it says that USafe is a virus? oh...";
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -645,7 +645,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
-                    queuedResponse = "\n<color=#BB3333>Carol:</color> I just asked my husband about it and he says that you're trying to scam me! F*** you, you thief!";
+                    queuedResponse = "\n<color=#BB3333>Carol:</color> I just asked my husband about it and he says that you're trying to scam me!? Shame on you!";
                     optionOneText.text = "Go get your parent's card and type out what's on the card.";
                     optionTwoText.text = "Go get your parent's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
@@ -697,7 +697,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Seth:</color> What the f*** are you talking about!? Do you think me a moron!? Unlock the damn computer!!!!!!";
+                    queuedResponse = "\n<color=#BB3333>Seth:</color> What are you talking about!? Do you think I'm a moron!? Unlock the damn computer!!!!!!";
                     optionOneText.text = "I need your credit card information to send an unlock code.";
                     optionTwoText.text = "Alright, fine then. The code is 4196134.";
                     optionThreeText.text = "I honestly thought that would work.";
@@ -707,7 +707,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 2;
-                    queuedResponse = "\n<color=#BB3333>Seth:</color> Just f***ing unlock it already! If my boss finds out I'll be fired! PLEASE! I have a wife and kids!";
+                    queuedResponse = "\n<color=#BB3333>Seth:</color> Just unlock it already! If my boss finds out I'll be fired! PLEASE! I have a wife and kids!";
                     optionOneText.text = "Okay fine, I'm sending the unlock code now. It's 4196134.";
                     optionTwoText.text = "I don't care. Send me your details or be a hobo. Either way suits me fine.";
                     optionThreeText.text = "Listen, I just need your card information to unlock the computer.";
@@ -719,7 +719,7 @@ public class ChatClientScript : MonoBehaviour {
                     node = 3;
                     queuedResponse = "\n<color=#BB3333>Seth:</color> DUDE! PLEASE UNLOCK THE COMPUTER BEFORE MY BOSS FIRES ME AND RUINS MY LIFE!";
                     optionOneText.text = "Alright then. Give me your credit card info and I'll unlock the computer.";
-                    optionTwoText.text = "You know what, I'm not going to give you anything. You can go and f*** yourself!";
+                    optionTwoText.text = "Yeah, good luck with that. Goodbye.";
                     optionThreeText.text = "Alright, you've convinced me. Here you go: 4196134.";
                     finalNode = false;
                 }
@@ -741,7 +741,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Seth:</color> Finally! Thanks for the free code! I kinda hate you slightly less now!";
+                    queuedResponse = "\n<color=#BB3333>Seth:</color> Finally! Thanks for the free code! You totally saved my life.";
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -751,7 +751,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Seth:</color> Jesus Christ! You ain't even serious! Fine, take the details!" + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
+                    queuedResponse = "\n<color=#BB3333>Seth:</color> Jesus Christ! You aren't even serious! Fine, take the details!" + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -775,7 +775,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Seth:</color> You're a f***ing unfeeling monster! Do you have any sympathy!? Take the details! My wife is going to kill me! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
+                    queuedResponse = "\n<color=#BB3333>Seth:</color> You're a monster! Do you have any sympathy!? Take the details! My wife is going to kill me! " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -786,7 +786,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
-                    queuedResponse = "\n<color=#BB3333>Seth:</color> God, alright! Fine! You'll get yours you f***ing lowlife! " + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
+                    queuedResponse = "\n<color=#BB3333>Seth:</color> God, alright! Fine! You'll get yours you lowlife! " + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "Go get your parent's card and type out what's on the card.";
                     optionTwoText.text = "Go get your parent's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
@@ -800,7 +800,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionOneText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Seth:</color> Dude, my wife is going to kill me! Fine, here! Now unlock the damn computer! " + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
+                    queuedResponse = "\n<color=#BB3333>Seth:</color> Dude, my wife is going to kill me! Fine, here! Now unlock the computer! " + databaseClient.getCardname() + " " + databaseClient.getCardnum() + " " + databaseClient.getExpirationdate() + " " + databaseClient.getCode();
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -811,7 +811,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionTwoText.text;
                     node = 1;
-                    queuedResponse = "\n<color=#BB3333>Seth:</color> What!? You aren't even gaining anything by doing this! Dude, don't go! This will ruin me!";
+                    queuedResponse = "\n<color=#BB3333>Seth:</color> why are you even doing this please dont go this will ruin me";
                     optionOneText.text = "It's like magic! I'll fix your computer, I promise, kid! But I need your parent's credit card.";
                     optionTwoText.text = "Well, I'll tell you if you get me your parent's credit card!";
                     optionThreeText.text = "I don't think I can help you. You're too young.";
@@ -821,7 +821,7 @@ public class ChatClientScript : MonoBehaviour {
                 {
                     userChatText.text = userChatText.text + "\n<color=#3333BB>" + GameInformation.pcName + "@MF:</color> " + optionThreeText.text;
                     node = 2;
-                    queuedResponse = "\n<color=#BB3333>Seth:</color> Oh thank you! You should give up this line of work.";
+                    queuedResponse = "\n<color=#BB3333>Seth:</color> Oh thank you! I really owe you one!";
                     optionOneText.text = "Go get your parent's card and type out what's on the card.";
                     optionTwoText.text = "Go get your parent's credit card and then I'll fix your computer!";
                     optionThreeText.text = "Sorry kid, that ain't gonna happen!";
@@ -948,10 +948,10 @@ public class ChatClientScript : MonoBehaviour {
         }
         else if (peopleInformation.getPersonCurrent() == 5) //Angry man
         {
-            queuedResponse = "\n<color=#555555>>Connected to user \"Seth\"</color>\n<color=#BB3333>Seth:</color> Alright punk, I know this is a f***ing scam! I need you to unlock my computer pronto!";
-            optionOneText.text = "Secure Data Entry Mode. Please enter your card details to unlock computer.";
-            optionTwoText.text = "Alright, if you want me to unlock your computer I'm going to need your credit card details.";
-            optionThreeText.text = "You know, if you ask me nicely I might actually unlock it for you.";
+            queuedResponse = "\n<color=#555555>>Connected to user \"Seth\"</color>\n<color=#BB3333>Seth:</color> Listen, I know this is a scam! I don't care - just unlock my computer now, you scumbag!";
+            optionOneText.text = "Automated Data Entry Mode. Please enter your card details to unlock computer.";
+            optionTwoText.text = "If you want me to unlock your computer I'm going to need your credit card details.";
+            optionThreeText.text = "If you treat me with some respect, I might actually unlock it for you.";
             node = 0;
         }
         StartCoroutine(ReplyCoroutine());
